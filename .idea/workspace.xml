@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="" />
+    <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/authentication.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +176,7 @@
       <workItem from="1585388576965" duration="4404000" />
       <workItem from="1586008608694" duration="1352000" />
       <workItem from="1586107251304" duration="241000" />
-      <workItem from="1586204611258" duration="10061000" />
+      <workItem from="1586204611258" duration="11267000" />
     </task>
     <servers />
   </component>
