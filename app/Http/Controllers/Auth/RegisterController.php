@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\RegisterMail;
+use App\Profile;
 use App\Providers\RouteServiceProvider;
 use App\Role;
 use App\User;
@@ -77,11 +78,15 @@ class RegisterController extends Controller
 
         $user->roles()->sync($request->roles,false);
 
+        Profile::create([
+            'pic' => 'avatar.png',
+            'bio' => null,
+            'company' => null,
+            'user_id' => $user->id
+        ]);
+
         Mail::to($user->email)->send(new RegisterMail($token,$user->name));
-        //$this->guard()->login($user);
-        /*$job = (new VerifyAccountJob($user->email,$user->name,$token))
-            ->delay(Carbon::now()->addSeconds(30));
-        $this->dispatch($job);*/
+
 
         return redirect()->intended(route('user.login'))
             ->with('success','Your account was created, visit your email to verify your account.');
