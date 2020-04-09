@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/profile/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/profile/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Agrosourcing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Agrosourcing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/farmer/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/flash/_notify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/flash/_notify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/_leg.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/_leg.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/_head.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -155,11 +147,13 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZA63rEry18awTLORcl71njcWjF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user/farmer" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -167,11 +161,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\farmer" />
       <recent name="C:\xampp\htdocs\Agrosourcing\public\img\profile" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\profile" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\auth" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -208,7 +202,8 @@
       <workItem from="1586008608694" duration="1352000" />
       <workItem from="1586107251304" duration="241000" />
       <workItem from="1586204611258" duration="11471000" />
-      <workItem from="1586336631885" duration="8527000" />
+      <workItem from="1586336631885" duration="8916000" />
+      <workItem from="1586466259868" duration="4845000" />
     </task>
     <servers />
   </component>

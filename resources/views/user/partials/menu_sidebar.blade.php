@@ -40,8 +40,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">All Projects</a>
-                        <a class="collapse-item" href="#">Approve/Decline Project</a>
+                        <a class="collapse-item" href="{{ route('user.view.farm') }}">View Farm</a>
+                        <a class="collapse-item" href="{{ route('user.add.farm') }}">Add Farm</a>
                     </div>
                 </div>
             </li>

@@ -38,10 +38,17 @@ Route::prefix('user')->group(function (){
 
     //============ Dashboard ==========
     Route::get('/', 'HomeController@index')->name('user.welcome');
+
+    //*****================= user profile management ======================****
     Route::get('/profile', 'ProfileController@index')->name('user.profile');
     Route::post('/profile/change-password', 'ProfileController@changePassword')->name('user.change.password');
     Route::post('/profile/change-bio', 'ProfileController@updateBio')->name('user.change.bio');
     Route::post('/profile/change-detail', 'ProfileController@updateDetail')->name('user.change.detail');
+
+    //****=========== Farmer Roles ==========**********
+    Route::get('/add-farm', 'FarmController@create')->name('user.add.farm');
+    Route::post('/add-farm', 'FarmController@store')->name('user.store.farm');
+    Route::get('/view-farm', 'FarmController@index')->name('user.view.farm');
 
 });
 
