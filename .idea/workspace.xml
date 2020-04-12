@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/farmer/view.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/aggregator/add_warehouse.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/aggregator/view_warehouse.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/product/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/product/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/_head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Crop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Crop.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -153,7 +154,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user/farmer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user/product" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -161,11 +162,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\product" />
+      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\aggregator" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\farmer" />
       <recent name="C:\xampp\htdocs\Agrosourcing\public\img\profile" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\profile" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\auth" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -203,7 +204,8 @@
       <workItem from="1586107251304" duration="241000" />
       <workItem from="1586204611258" duration="11471000" />
       <workItem from="1586336631885" duration="8916000" />
-      <workItem from="1586466259868" duration="4845000" />
+      <workItem from="1586466259868" duration="5083000" />
+      <workItem from="1586705887098" duration="8160000" />
     </task>
     <servers />
   </component>

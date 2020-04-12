@@ -50,6 +50,15 @@ Route::prefix('user')->group(function (){
     Route::post('/add-farm', 'FarmController@store')->name('user.store.farm');
     Route::get('/view-farm', 'FarmController@index')->name('user.view.farm');
 
+    //========= AGGREGATOR ===========
+    Route::get('/add-warehouse','WarehouseController@create')->name('user.add.warehouse');
+    Route::post('/add-warehouse','WarehouseController@store')->name('user.store.warehouse');
+    Route::get('/view-warehouse','WarehouseController@index')->name('user.view.warehouse');
+
+    //========= PRODUCT ===========
+    Route::get('/add-product','ProductController@create')->name('user.add.product');
+    Route::post('/add-product','ProductController@store')->name('user.store.product');
+    Route::get('/view-product','ProductController@index')->name('user.view.product');
 });
 
 Route::prefix('admin')->group(function (){

@@ -53,23 +53,20 @@
                 </a>
                 <div id="collapseFunding" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">View Transactions</a>
-                        <a class="collapse-item" href="">View Funding</a>
-                        <a class="collapse-item" href="">Add Cash</a>
+                        <a class="collapse-item" href="{{ route('user.add.product') }}">Add Product</a>
                     </div>
                 </div>
             </li>
         @elseif($role->id == 3)
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFunding" aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAggregator" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-money-bill"></i>
-                    <span>Stock</span>
+                    <span>Aggregator</span>
                 </a>
-                <div id="collapseFunding" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapseAggregator" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">View Transactions</a>
-                        <a class="collapse-item" href="">View Funding</a>
-                        <a class="collapse-item" href="">Add Cash</a>
+                        <a class="collapse-item" href="{{ route('user.add.warehouse') }}">Add Warehouse</a>
+                        <a class="collapse-item" href="{{ route('user.view.warehouse') }}">View Warehouse</a>
                     </div>
                 </div>
             </li>

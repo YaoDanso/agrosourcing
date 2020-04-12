@@ -15,4 +15,8 @@ class Crop extends Model
     public function wastes(){
         return $this->hasMany(Waste::class);
     }
+
+    public function warehouses(){
+        return $this->belongsToMany(Warehouse::class);
+    }
 }
