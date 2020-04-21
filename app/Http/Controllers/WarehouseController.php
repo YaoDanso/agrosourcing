@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Crop;
 use App\Warehouse;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class WarehouseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -43,6 +48,7 @@ class WarehouseController extends Controller
             'longitude' => 'required',
             'latitude' => 'required',
             'price' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         $warehouse = new Warehouse();
@@ -51,8 +57,16 @@ class WarehouseController extends Controller
         $warehouse->latitude = $request->latitude;
         $warehouse->price = $request->price;
         $warehouse->user_id = auth()->user()->id;
-        $warehouse->save();
 
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $new_name = time() . "." . $image->getClientOriginalExtension();
+            $location = public_path('img/warehouses/'.$new_name);
+            Image::make($image)->resize(450, 320)->save($location,90);
+            $warehouse->image = $new_name;
+        }
+
+        $warehouse->save();
         $warehouse->crops()->sync($request->crops, false);
 
         return redirect()->route('user.view.warehouse')

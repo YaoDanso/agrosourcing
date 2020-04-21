@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Crop;
 use App\Farm;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class FarmController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,15 +47,26 @@ class FarmController extends Controller
             'size' => 'required',
             'longitude' => 'required',
             'latitude' => 'required',
+            'price' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
-        Farm::create([
-            'longitude' => $request->longitude,
-            'latitude' => $request->latitude,
-            'size' => $request->size,
-            'crop_id' => $request->crop,
-            'user_id' => auth()->user()->id
-        ]);
+         $farm = new Farm();
+         $farm->longitude = $request->longitude;
+         $farm->latitude = $request->latitude;
+         $farm->size = $request->size;
+         $farm->crop_id = $request->crop;
+         $farm->price = $request->price;
+         $farm->user_id = auth()->user()->id;
+
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $new_name = time() . "." . $image->getClientOriginalExtension();
+            $location = public_path('img/farms/'.$new_name);
+            Image::make($image)->resize(450, 320)->save($location,90);
+            $farm->image = $new_name;
+        }
+        $farm->save();
 
         return redirect()->route('user.view.farm')
             ->with('success','Farm added successfully!');

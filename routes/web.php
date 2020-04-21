@@ -59,6 +59,9 @@ Route::prefix('user')->group(function (){
     Route::get('/add-product','ProductController@create')->name('user.add.product');
     Route::post('/add-product','ProductController@store')->name('user.store.product');
     Route::get('/view-product','ProductController@index')->name('user.view.product');
+
+    //=========== OrderList ============
+    Route::get('/products','HomeController@orderList')->name('user.view.orderList');
 });
 
 Route::prefix('admin')->group(function (){

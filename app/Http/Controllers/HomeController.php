@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Farm;
+use App\Product;
+use App\Warehouse;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +27,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('user.dashboard');
+    }
+
+    public function orderList(){
+        $farms = Farm::all();
+        $warehouses = Warehouse::all();
+        $products = Product::all();
+        return view('user.order.order-list',compact('farms','warehouses','products'));
     }
 }

@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/user/aggregator/add_warehouse.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/aggregator/view_warehouse.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/product/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/product/view.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/order/order-list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Crop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Crop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Farm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Farm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CropController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CropController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FarmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FarmController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WasteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WasteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Warehouse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Warehouse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_213223_create_farms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_213223_create_farms_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_12_155101_create_warehouses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_12_155101_create_warehouses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/aggregator/add_warehouse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/aggregator/add_warehouse.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -153,8 +163,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user/product" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/warehouses" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -162,11 +173,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\order" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\product" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\aggregator" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\farmer" />
       <recent name="C:\xampp\htdocs\Agrosourcing\public\img\profile" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\profile" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -205,7 +216,10 @@
       <workItem from="1586204611258" duration="11471000" />
       <workItem from="1586336631885" duration="8916000" />
       <workItem from="1586466259868" duration="5083000" />
-      <workItem from="1586705887098" duration="8160000" />
+      <workItem from="1586705887098" duration="8583000" />
+      <workItem from="1587304686476" duration="737000" />
+      <workItem from="1587317303832" duration="3787000" />
+      <workItem from="1587468640663" duration="2582000" />
     </task>
     <servers />
   </component>

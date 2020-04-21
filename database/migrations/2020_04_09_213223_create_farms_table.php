@@ -20,6 +20,8 @@ class CreateFarmsTable extends Migration
             $table->integer('crop_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('size');
+            $table->string('price');
+            $table->string('image');
             $table->timestamps();
 
             $table->foreign('crop_id')

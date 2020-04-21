@@ -73,6 +73,11 @@
         @endif
     @endforeach
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('user.view.orderList') }}">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Place Order</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-fw fa-power-off"></i>
             <span>Logout</span></a>
