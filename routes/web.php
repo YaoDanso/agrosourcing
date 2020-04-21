@@ -62,6 +62,7 @@ Route::prefix('user')->group(function (){
 
     //=========== OrderList ============
     Route::get('/products','HomeController@orderList')->name('user.view.orderList');
+    Route::get('/product/{id}/order/{type}','HomeController@orderListDetail')->name('user.view.orderList.detail');
 });
 
 Route::prefix('admin')->group(function (){

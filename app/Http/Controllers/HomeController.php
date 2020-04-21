@@ -35,4 +35,14 @@ class HomeController extends Controller
         $products = Product::all();
         return view('user.order.order-list',compact('farms','warehouses','products'));
     }
+
+    public function orderListDetail($id,$type){
+        if ($type == 'farm'){
+            $farm = Farm::where('id',$id)->first();
+            return view('user.order.order-detail-farm',compact('farm'));
+        }elseif ($type == 'warehouse'){
+            $warehouse = Warehouse::where('id',$id)->first();
+            return view('user.order.order-detail',compact('warehouse'));
+        }
+    }
 }
