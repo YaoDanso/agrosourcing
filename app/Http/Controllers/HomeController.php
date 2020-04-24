@@ -37,10 +37,27 @@ class HomeController extends Controller
     }
 
     public function orderList(){
-        $farms = Farm::all();
-        $warehouses = Warehouse::all();
-        $products = Product::all();
-        return view('user.order.order-list',compact('farms','warehouses','products'));
+        if (\request('category') && \request('item')){
+            $category = \request('category');
+            $results = [];
+            $item = \request('item');
+            if ($category == 'farm'){
+                $data = Farm::join('crops','crops.id','=','farms.crop_id')
+                            ->where('crops.name', 'LIKE', '%'.$item.'%')->get();
+                $results[]["farm"] = $data;
+            }elseif ($category == 'warehouse'){
+                $data = Warehouse::whereHas('crops', function ($query){
+                    $query->where('name','LIKE','%'.\request('item').'%');
+                })->get();
+                $results[]["warehouse"] = $data;
+            }
+            return view('user.order.search',compact('results'));
+        }else{
+            $farms = Farm::all();
+            $warehouses = Warehouse::all();
+            $products = Product::all();
+            return view('user.order.order-list',compact('farms','warehouses','products'));
+        }
     }
 
     public function orderListDetail($id,$type){
