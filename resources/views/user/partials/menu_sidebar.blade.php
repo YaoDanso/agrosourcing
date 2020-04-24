@@ -73,9 +73,16 @@
         @endif
     @endforeach
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('user.view.orderList') }}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapsePages">
             <i class="fa fa-shopping-cart"></i>
-            <span>Place Order</span></a>
+            <span>Orders</span>
+        </a>
+        <div id="collapseOrders" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('user.view.orderList') }}">Place Order</a>
+                <a class="collapse-item" href="{{ route('user.view.cart') }}">View Carts</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">

@@ -62,7 +62,10 @@ Route::prefix('user')->group(function (){
 
     //=========== OrderList ============
     Route::get('/products','HomeController@orderList')->name('user.view.orderList');
+    Route::get('/view-cart','HomeController@cart')->name('user.view.cart');
+    Route::get('/remove-cart/{id}','HomeController@removeCart')->name('user.remove.cart');
     Route::get('/product/{id}/order/{type}','HomeController@orderListDetail')->name('user.view.orderList.detail');
+    Route::get('/add/{id}/{type}','HomeController@addToCart')->name('user.add.cart');
 });
 
 Route::prefix('admin')->group(function (){

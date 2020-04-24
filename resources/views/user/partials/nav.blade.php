@@ -6,7 +6,13 @@
     <img src="{{ asset('img/logo.png') }}" height="50px"/>
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
-
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="{{ route('user.view.cart') }}">
+                <i class="fa fa-shopping-cart"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-success badge-counter">{{ \Cart::getContent()->count() }}</span>
+            </a>
+        </li>
         <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>

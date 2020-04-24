@@ -11,4 +11,8 @@ class Warehouse extends Model
     public function crops(){
         return $this->belongsToMany(Crop::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

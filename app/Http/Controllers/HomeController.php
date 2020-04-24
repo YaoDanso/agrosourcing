@@ -6,6 +6,8 @@ use App\Farm;
 use App\Product;
 use App\Warehouse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Cart;
 
 class HomeController extends Controller
 {
@@ -29,6 +31,11 @@ class HomeController extends Controller
         return view('user.dashboard');
     }
 
+    public function cart()
+    {
+        return view('user.order.cart');
+    }
+
     public function orderList(){
         $farms = Farm::all();
         $warehouses = Warehouse::all();
@@ -42,7 +49,55 @@ class HomeController extends Controller
             return view('user.order.order-detail-farm',compact('farm'));
         }elseif ($type == 'warehouse'){
             $warehouse = Warehouse::where('id',$id)->first();
-            return view('user.order.order-detail',compact('warehouse'));
+            return view('user.order.order-detail-warehouse',compact('warehouse'));
         }
+    }
+
+    public function addToCart($id,$type){
+        if ($type == 'farm'){
+            $qty = \request('qty');
+            $farm = Farm::where('id',$id)->first();
+            $userId = auth()->user()->uuid;
+            //echo $qty . " - " . $farm . " - " . $rowId . " - " . $userId;
+            Cart::add(array(
+                'id' => Str::random(6).$farm->id,
+                'name' => $farm->user->name . " farm",
+                'price' => (double)$farm->price,
+                'quantity' => $qty,
+                'attributes' => array(
+                    'crop' => $farm->crop->name,
+                    'image' => $farm->image,
+                    'type' => 'farm'
+                )
+            ));
+            return response(array(
+                'success' => true,
+                'message' => "item added."
+            ),201,[]);
+        }elseif ($type == 'warehouse'){
+            $qty = \request('qty');
+            $warehouse = Warehouse::where('id',$id)->first();
+            //echo $qty . " - " . $farm . " - " . $rowId . " - " . $userId;
+            Cart::add(array(
+                'id' => Str::random(6).$warehouse->id,
+                'name' => $warehouse->user->name . " warehouse",
+                'price' => (double)$warehouse->price,
+                'quantity' => $qty,
+                'attributes' => array(
+                    'crop' => $warehouse->crops[0]->name,
+                    'image' => $warehouse->image,
+                    'type' => 'warehouse'
+                )
+            ));
+            return response(array(
+                'success' => true,
+                'message' => "item added."
+            ),201,[]);
+        }
+    }
+
+    public function removeCart($rowId){
+        Cart::remove($rowId);
+        return redirect()->back()->with('success','Item is removed successfully');
     }
 }

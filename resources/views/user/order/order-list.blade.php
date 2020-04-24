@@ -19,7 +19,7 @@
                                     @if($farm->user->profile->company !== null) - {{ $farm->user->profile->company }}@endif</h6>
                                 <p class="card-text">Crop Type: {{ $farm->crop->name }}</p>
                                 <p class="card-text">Farm Size: {{ $farm->size }}</p>
-                                <p class="card-text">Price: GHS{{ $farm->price }} per Qty</p>
+                                <p class="card-text">Price: GHS{{ $farm->price }} per unit</p>
                                 <a href="{{ route('user.view.orderList.detail',['id'=>$farm->id,'type'=>'farm']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
                                 <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($farm->updated_at)->diffForHumans()}}</small></p>
                             </div>
@@ -36,8 +36,8 @@
                                 @if($farm->user->profile->company !== null) - {{ $farm->user->profile->company }}@endif</h6>
                                 <p class="card-text">Region: {{ $warehouse->region }} Region</p>
                                 <p class="card-text">Crop Type(s): {{$warehouse->crops[0]->name}} </p>
-                                <p class="card-text">Price: GHS{{ $warehouse->price }} per Qty </p>
-                                <a href="#" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
+                                <p class="card-text">Price: GHS{{ $warehouse->price }} per unit </p>
+                                <a href="{{ route('user.view.orderList.detail',['id'=>$warehouse->id,'type'=>'warehouse']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
                                 <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($warehouse->updated_at)->diffForHumans()}}</small></p>
                             </div>
                         </div>
@@ -59,7 +59,4 @@
             <h3 class="font-weight-light">No items available to order</h3>
         @endif
     </div>
-{{--    <ul class="pagination justify-content-center">
-        {{ $posts->render() }}
-    </ul>--}}
 @endsection
