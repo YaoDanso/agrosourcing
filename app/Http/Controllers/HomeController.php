@@ -117,4 +117,8 @@ class HomeController extends Controller
         Cart::remove($rowId);
         return redirect()->back()->with('success','Item is removed successfully');
     }
+
+    public function billing(){
+        return view('user.order.billing');
+    }
 }

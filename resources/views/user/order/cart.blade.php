@@ -67,7 +67,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="pull-right" style="margin: 10px">
-                            <a href="" class="btn btn-success float-right">Checkout</a>
+                            <a href="{{ route('user.view.billing') }}" class="btn btn-success float-right ml-4">Checkout</a>
                             <div class="float-right" style="margin: 5px">
                                 Total price: <b>GHS{{ Cart::getTotal() }}</b>
                             </div>
