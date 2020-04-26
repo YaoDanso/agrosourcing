@@ -13,7 +13,8 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 card p-5">
                 <h3 class="font-weight-light mb-3">Billing / Delivery Details</h3>
                 <div class="">
-                    <form action="">
+                    <form action="" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
