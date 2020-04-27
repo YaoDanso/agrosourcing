@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Farm;
+use App\Order;
+use App\OrderDetail;
 use App\Product;
+use App\Shipping;
 use App\Warehouse;
+use Carbon\Carbon;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Cart;
 
 class HomeController extends Controller
 {
@@ -120,5 +126,74 @@ class HomeController extends Controller
 
     public function billing(){
         return view('user.order.billing');
+    }
+
+    public function checkout(Request $request){
+        //dd($request);
+        $data = array();
+        $o_data = array();
+        $p_data = array();
+
+        $data["name"] = $request->first_name . " " .$request->last_name;
+        $data["company"] = $request->company_name;
+        $data["address"] = $request->address;
+        $data["city"] = $request->city;
+        $data["ghana_post"] = $request->ghana_post;
+        $data["phone"] = $request->phone;
+        $data["user_id"] = auth()->user()->id;
+        $data["created_at"] = Carbon::now();
+        $data["updated_at"] = Carbon::now();
+
+        $payment = $request->options;
+        $order_code = substr(sha1(time()),0,6);
+        $shipping_id = "";
+        $order_id = "";
+
+        //checking to see if the Shipping table has a user already the update otherwise insert new entry
+        $check = Shipping::where('user_id',auth()->user()->id)->first();
+        if ($check){
+            Shipping::where('user_id',Auth::user()->id)
+                ->update($data);
+            $shipping_id = $check->id;
+        }else{
+            $shipping_id = DB::table('shippings')
+                ->insertGetId($data);
+        }
+
+        //insert items into orders table and update others later
+        $o_data["user_id"] = Auth::user()->id;
+        $o_data["shipping_id"] = $shipping_id;
+        $o_data["total"] = \Cart::getTotal();
+        $o_data["status"] = 1;
+        $o_data["code"] = $order_code;
+        $o_data["created_at"] = Carbon::now();
+        $o_data["updated_at"] = Carbon::now();
+
+        $order_id = DB::table('orders')
+            ->insertGetId($o_data);
+
+        //insert into payment with the order id
+        $p_data["method"] = $payment;
+        $p_data["status"] = 1;
+        $p_data["order_id"] = $order_id;
+        $p_data["created_at"] = Carbon::now();
+        $p_data["updated_at"] = Carbon::now();
+        $payment_id = DB::table('payments')->insertGetId($p_data);
+        Order::where('code',$order_code)->update(['payment_id'=> $payment_id]);
+
+        $carts = \Cart::getContent();
+        foreach ($carts as $cart){
+            OrderDetail::create([
+                'name' => $cart->name,
+                'image' => $cart->attributes->image,
+                'type' => $cart->attributes->type,
+                'price' => $cart->price,
+                'qty' => $cart->quantity,
+                'order_id' => $order_id
+            ]);
+        }
+        \Cart::clear();
+        return redirect()->route('user.welcome')
+            ->with('success','Your order was successfully placed with code: '.$order_code);
     }
 }

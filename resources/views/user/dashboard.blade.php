@@ -28,7 +28,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-body">
-
+            @include('flash._notify')
         </div>
     </div>
 @endsection

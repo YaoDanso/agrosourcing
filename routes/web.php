@@ -63,6 +63,7 @@ Route::prefix('user')->group(function (){
     //=========== OrderList ============
     Route::get('/products','HomeController@orderList')->name('user.view.orderList');
     Route::get('/checkout','HomeController@billing')->name('user.view.billing');
+    Route::post('/checkout','HomeController@checkout')->name('user.checkout');
     Route::get('/view-cart','HomeController@cart')->name('user.view.cart');
     Route::get('/remove-cart/{id}','HomeController@removeCart')->name('user.remove.cart');
     Route::get('/product/{id}/order/{type}','HomeController@orderListDetail')->name('user.view.orderList.detail');

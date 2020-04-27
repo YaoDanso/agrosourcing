@@ -20,6 +20,7 @@ class CreateOrderDetailsTable extends Migration
             $table->string('type');
             $table->double('price');
             $table->integer('qty');
+            $table->integer('order_id')->unsigned();
             $table->timestamps();
         });
     }
