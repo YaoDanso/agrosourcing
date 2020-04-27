@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('region');
             $table->string('longitude');
             $table->string('latitude');
+            $table->string('image');
             $table->text('wastes');
             $table->integer('user_id')->unsigned();
 

@@ -8,7 +8,7 @@
     <div class="card shadow mb-4 p-3">
         <div class="card-body">
             @include('flash._notify')
-            <form action="{{ route('user.store.product') }}" method="post">
+            <form action="{{ route('user.store.product') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-6">
@@ -18,15 +18,15 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Description of Product</label>
-                            <textarea class="form-control" name="description" required></textarea>
+                            <textarea class="form-control" name="description" required rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="name">Price Per Quantity</label>
                             <input type="number" class="form-control" name="price" required>
                         </div>
                         <div class="form-group">
-                            <label for="name">Raw materials used</label>
-                            <textarea class="form-control" name="materials" required></textarea>
+                            <label for="name">Raw materials used (Separate with comma if you have more than one)</label>
+                            <textarea class="form-control" name="materials" required rows="3"></textarea>
                         </div>
                     </div>
                     <div class="col-6">
@@ -34,7 +34,7 @@
                             <label for="name">Name of Business</label>
                             <input type="text" class="form-control" name="business" required>
                         </div>
-                        <div class="form-group mb-5">
+                        <div class="form-group">
                             <label for="">Select Region</label>
                             <select name="region" class="form-control">
                                 <option value="Eastern">Eastern Region</option>
@@ -72,6 +72,10 @@
                         <div class="form-group">
                             <label for="name">Generated Wastes (Separate with comma if you have more than one)</label>
                             <input type="text" name="wastes" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Choose a picture for Product</label>
+                            <input type="file" class="form-control" name="image" required>
                         </div>
                     </div>
                 </div>

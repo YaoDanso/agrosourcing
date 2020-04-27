@@ -75,5 +75,30 @@
                 <h3 class="font-weight-light">No results found for your search.</h3>
             @endif
         @endisset
+        @isset($results[0]['product'])
+            @if(count($results[0]['product']) > 0)
+                <div class="row">
+                    @foreach($results[0]['product'] as $product)
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 mb-3">
+                            <div class="card shadow-sm">
+                                <img class="card-img-top" src="{{ asset('img/products/'.$product->image) }}" alt="warehouse image" height="200px">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fa fa-dot-circle text-info"></i> Product</h5>
+                                    <h6 class="card-text">{{ $product->name }}</h6>
+                                    <p class="card-text">{{ $product->business }}</p>
+                                    <p class="card-text">Material(s): {{ $product->materials }}</p>
+                                    <p class="card-text">Region: {{ $product->region }} Region</p>
+                                    <p class="card-text">Price: GHS{{ $product->price }} per unit</p>
+                                    <a href="{{ route('user.view.orderList.detail',['id'=>$product->id,'type'=>'product']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
+                                    <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($product->updated_at)->diffForHumans()}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <h3 class="font-weight-light">No results found for your search.</h3>
+            @endif
+        @endisset
     </div>
 @endsection

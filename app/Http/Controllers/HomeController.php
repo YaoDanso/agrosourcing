@@ -56,6 +56,9 @@ class HomeController extends Controller
                     $query->where('name','LIKE','%'.\request('item').'%');
                 })->get();
                 $results[]["warehouse"] = $data;
+            }elseif ($category == 'product'){
+                $data = Product::where('materials','LIKE','%'.\request('item').'%')->get();
+                $results[]["product"] = $data;
             }
             return view('user.order.search',compact('results'));
         }else{
@@ -73,6 +76,9 @@ class HomeController extends Controller
         }elseif ($type == 'warehouse'){
             $warehouse = Warehouse::where('id',$id)->first();
             return view('user.order.order-detail-warehouse',compact('warehouse'));
+        }elseif ($type == 'product'){
+            $product = Product::where('id',$id)->first();
+            return view('user.order.order-detail-product',compact('product'));
         }
     }
 
@@ -81,8 +87,7 @@ class HomeController extends Controller
             $qty = \request('qty');
             $farm = Farm::where('id',$id)->first();
             $userId = auth()->user()->uuid;
-            //echo $qty . " - " . $farm . " - " . $rowId . " - " . $userId;
-            Cart::add(array(
+            \Cart::add(array(
                 'id' => Str::random(6).$farm->id,
                 'name' => $farm->user->name . " farm",
                 'price' => (double)$farm->price,
@@ -100,8 +105,7 @@ class HomeController extends Controller
         }elseif ($type == 'warehouse'){
             $qty = \request('qty');
             $warehouse = Warehouse::where('id',$id)->first();
-            //echo $qty . " - " . $farm . " - " . $rowId . " - " . $userId;
-            Cart::add(array(
+            \Cart::add(array(
                 'id' => Str::random(6).$warehouse->id,
                 'name' => $warehouse->user->name . " warehouse",
                 'price' => (double)$warehouse->price,
@@ -116,11 +120,29 @@ class HomeController extends Controller
                 'success' => true,
                 'message' => "item added."
             ),201,[]);
+        }elseif ($type == 'product'){
+            $qty = \request('qty');
+            $product = Product::where('id',$id)->first();
+            \Cart::add(array(
+                'id' => Str::random(6).$product->id,
+                'name' => $product->name,
+                'price' => (double)$product->price,
+                'quantity' => $qty,
+                'attributes' => array(
+                    'crop' => $product->materials,
+                    'image' => $product->image,
+                    'type' => 'product'
+                )
+            ));
+            return response(array(
+                'success' => true,
+                'message' => "item added."
+            ),201,[]);
         }
     }
 
     public function removeCart($rowId){
-        Cart::remove($rowId);
+        \Cart::remove($rowId);
         return redirect()->back()->with('success','Item is removed successfully');
     }
 

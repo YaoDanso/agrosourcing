@@ -29,6 +29,9 @@
                                     @elseif($item->attributes->type == 'warehouse')
                                         <img class="img-responsive"
                                              src="{{ asset('img/warehouses/'.$item->attributes->image) }}" alt="prewiew" width="120" height="80">
+                                    @elseif($item->attributes->type == 'product')
+                                        <img class="img-responsive"
+                                             src="{{ asset('img/products/'.$item->attributes->image) }}" alt="prewiew" width="120" height="80">
                                     @endif
                                 </div>
                                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
@@ -58,12 +61,6 @@
                             </div>
                             <hr>
                         @endforeach
-                        <!-- END PRODUCT -->
-                        <div class="float-right">
-                            <a href="" class="btn btn-outline-secondary pull-right">
-                                Update shopping cart
-                            </a>
-                        </div>
                     </div>
                     <div class="card-footer">
                         <div class="pull-right" style="margin: 10px">

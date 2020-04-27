@@ -61,17 +61,23 @@
                         </div>
                     </div>
                 @endforeach
-                {{--@foreach($products as $product)
-                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    @foreach($products as $product)
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                            <div class="card shadow-sm">
+                                <img class="card-img-top" src="{{ asset('img/products/'.$product->image) }}" alt="product image" height="200px">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fa fa-dot-circle text-info"></i> Product</h5>
+                                    <h6 class="card-text">{{$product->name}}</h6>
+                                    <p class="card-text">Company: {{ $product->business }}</p>
+                                    <p class="card-text">Region: {{ $product->region }} Region</p>
+                                    <p class="card-text">Material(s): {{$product->materials}} </p>
+                                    <p class="card-text">Price: GHS{{ $product->price }} per unit </p>
+                                    <a href="{{ route('user.view.orderList.detail',['id'=>$product->id,'type'=>'product']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
+                                    <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($product->updated_at)->diffForHumans()}}</small></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach--}}
+                    @endforeach
             </div>
         @else
             <h3 class="font-weight-light">No items available to order</h3>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Waste;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -42,18 +43,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'materials' => $request->materials,
-            'business' => $request->business,
-            'region' => $request->region,
-            'longitude' => $request->longitude,
-            'latitude' => $request->latitude,
-            'wastes' => $request->wastes,
-            'user_id' => auth()->user()->id
+        $this->validate($request,[
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
+
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $new_name = time() . "." . $image->getClientOriginalExtension();
+            $location = public_path('img/products/'.$new_name);
+            Image::make($image)->resize(450, 320)->save($location,90);
+
+            Product::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'materials' => $request->materials,
+                'business' => $request->business,
+                'region' => $request->region,
+                'longitude' => $request->longitude,
+                'latitude' => $request->latitude,
+                'wastes' => $request->wastes,
+                'user_id' => auth()->user()->id,
+                'image' => $new_name
+            ]);
+        }
 
         return redirect()->route('user.view.product')
             ->with('success','Product was created successfully!');
