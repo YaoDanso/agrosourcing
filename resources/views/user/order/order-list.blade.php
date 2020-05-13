@@ -52,7 +52,7 @@
                                 <h5 class="card-title"><i class="fa fa-dot-circle text-warning"></i> Warehouse</h5>
                                 <h6 class="card-text">{{$warehouse->user->name}}
                                 @if($warehouse->user->profile->company !== null) - {{ $warehouse->user->profile->company }}@endif</h6>
-                                <p class="card-text">Region: {{ $warehouse->region }} Region</p>
+                                <p class="card-text">{{ $warehouse->region->name }} Region</p>
                                 <p class="card-text">Crop Type(s): {{$warehouse->crops[0]->name}} </p>
                                 <p class="card-text">Price: GHS{{ $warehouse->price }} per unit </p>
                                 <a href="{{ route('user.view.orderList.detail',['id'=>$warehouse->id,'type'=>'warehouse']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
@@ -69,7 +69,7 @@
                                     <h5 class="card-title"><i class="fa fa-dot-circle text-info"></i> Product</h5>
                                     <h6 class="card-text">{{$product->name}}</h6>
                                     <p class="card-text">Company: {{ $product->business }}</p>
-                                    <p class="card-text">Region: {{ $product->region }} Region</p>
+                                    <p class="card-text">{{ $product->region->name }} Region</p>
                                     <p class="card-text">Material(s): {{$product->materials}} </p>
                                     <p class="card-text">Price: GHS{{ $product->price }} per unit </p>
                                     <a href="{{ route('user.view.orderList.detail',['id'=>$product->id,'type'=>'product']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>

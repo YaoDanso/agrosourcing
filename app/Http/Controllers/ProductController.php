@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Region;
 use App\Waste;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -32,7 +33,8 @@ class ProductController extends Controller
     public function create()
     {
         $wastes = Waste::all();
-        return view('user.product.add',compact('wastes'));
+        $regions = Region::all();
+        return view('user.product.add',compact('wastes','regions'));
     }
 
     /**
@@ -59,7 +61,7 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'materials' => $request->materials,
                 'business' => $request->business,
-                'region' => $request->region,
+                'region_id' => $request->region,
                 'longitude' => $request->longitude,
                 'latitude' => $request->latitude,
                 'wastes' => $request->wastes,

@@ -31,8 +31,9 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="">Farm Size*</label>
-                            <input type="text" class="form-control" name="size" value="{{ old('size') }}">
+                            <label for="">Farm Size (In Acres)*</label>
+                            <input type="number" class="form-control" min="0"
+                                   name="size" value="{{ old('size') }}">
                         </div>
                     </div>
                     <div class="col-6">
@@ -59,6 +60,14 @@
                             <input type="file" name="image" class="form-control" value="{{ old('image') }}">
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Select Region*</label>
+                    <select name="region" class="form-control">
+                        @foreach($regions as $region)
+                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Add Farm Details <i class="fa fa-arrow-right"></i></button>

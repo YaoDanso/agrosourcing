@@ -19,6 +19,7 @@
                                 <th>longitude</th>
                                 <th>latitude</th>
                                 <th>size</th>
+                                <th>region</th>
                                 <th>Crop</th>
                                 <th>Wastes</th>
                             </tr>
@@ -30,6 +31,7 @@
                                     <td>{{ $farm->longitude }}</td>
                                     <td>{{ $farm->latitude }}</td>
                                     <td>{{ $farm->size }}</td>
+                                    <td>{{ $farm->region->name }}</td>
                                     <td>{{ $farm->crop->name }}</td>
                                     <td>
                                         @foreach($farm->crop->wastes as $waste)

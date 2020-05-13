@@ -18,6 +18,7 @@
                 @endif
                 <h4 class="font-weight-light mb-3">Materials: {{ $product->materials }}</h4>
                 <h4 class="font-weight-light mb-3">Price: GHS{{ $product->price }} per unit</h4>
+                <h4 class="font-weight-light mb-3">Location: {{ $product->region->name }}</h4>
                 <h4 class="font-weight-light mb-3">Wastes: {{ $product->wastes }}</h4>
                 <div class="col-4 mt-4">
                     <div class="form-group">

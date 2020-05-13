@@ -2,7 +2,7 @@
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Available Farms</h1>
+        <h1 class="h3 mb-0 text-gray-800">View Products</h1>
     </div>
 
     <div class="card shadow mb-4 p-4">
@@ -35,7 +35,7 @@
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->longitude }}</td>
                                     <td>{{ $product->latitude }}</td>
-                                    <td>{{ $product->region }}</td>
+                                    <td>{{ $product->region->name }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->materials }}</td>
                                     <td>{{ $product->business }}</td>

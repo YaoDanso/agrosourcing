@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Crop;
+use App\Region;
 use App\Warehouse;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -32,7 +33,8 @@ class WarehouseController extends Controller
     public function create()
     {
         $crops = Crop::all();
-        return view('user.aggregator.add_warehouse',compact('crops'));
+        $regions = Region::all();
+        return view('user.aggregator.add_warehouse',compact('crops','regions'));
     }
 
     /**
@@ -52,7 +54,7 @@ class WarehouseController extends Controller
         ]);
 
         $warehouse = new Warehouse();
-        $warehouse->region = $request->region;
+        $warehouse->region_id = $request->region;
         $warehouse->longitude = $request->longitude;
         $warehouse->latitude = $request->latitude;
         $warehouse->price = $request->price;

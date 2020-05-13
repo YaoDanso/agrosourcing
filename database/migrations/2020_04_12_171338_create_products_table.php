@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->double('price');
             $table->string('materials');
             $table->string('business');
-            $table->string('region');
+            $table->integer('region_id')->unsigned();
             $table->string('longitude');
             $table->string('latitude');
             $table->string('image');
@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->integer('user_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('region_id')->references('id')->on('regions');
             $table->timestamps();
         });
     }

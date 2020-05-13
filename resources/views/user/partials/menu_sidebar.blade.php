@@ -54,6 +54,7 @@
                 <div id="collapseFunding" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('user.add.product') }}">Add Product</a>
+                        <a class="collapse-item" href="{{ route('user.view.product') }}">View Product</a>
                     </div>
                 </div>
             </li>
@@ -83,6 +84,11 @@
                 <a class="collapse-item" href="{{ route('user.view.cart') }}">View Carts</a>
             </div>
         </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#searchModal">
+            <i class="fa fa-map"></i>
+            <span>Access Map</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">

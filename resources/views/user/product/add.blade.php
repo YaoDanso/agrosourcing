@@ -37,22 +37,9 @@
                         <div class="form-group">
                             <label for="">Select Region</label>
                             <select name="region" class="form-control">
-                                <option value="Eastern">Eastern Region</option>
-                                <option value="Central">Central Region</option>
-                                <option value="Greater Accra">Greater Accra Region</option>
-                                <option value="Oti ">Oti Region</option>
-                                <option value="Bono East">Bono East Region</option>
-                                <option value="Bono">Bono Region</option>
-                                <option value="Savannah">Savannah Region</option>
-                                <option value="Ahafo">Ahafo Region</option>
-                                <option value="Western North">Western North Region</option>
-                                <option value="Western North">Western North Region</option>
-                                <option value="Western">Western Region</option>
-                                <option value="Volta">Volta Region</option>
-                                <option value="Ashanti">Ashanti Region</option>
-                                <option value="Northern">Northern Region</option>
-                                <option value="Upper East">Upper East Region</option>
-                                <option value="Upper West">Upper West Region</option>
+                                @foreach($regions as $region)
+                                    <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="row">

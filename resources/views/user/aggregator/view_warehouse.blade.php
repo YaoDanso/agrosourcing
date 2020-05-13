@@ -27,7 +27,7 @@
                             @foreach($warehouses as $warehouse)
                                 <tr>
                                     <td>{{ \Carbon\Carbon::parse($warehouse->created_at)->format('dS M Y') }}</td>
-                                    <td>{{ $warehouse->region }}</td>
+                                    <td>{{ $warehouse->region->name }}</td>
                                     <td>{{ $warehouse->longitude }}</td>
                                     <td>{{ $warehouse->latitude }}</td>
                                     <td>{{ $warehouse->price }}</td>

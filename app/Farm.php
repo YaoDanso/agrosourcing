@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Farm extends Model
 {
-    protected $fillable = ['id','longitude','latitude','crop_id','user_id','size','price','image'];
+    protected $fillable = ['id','longitude','latitude','crop_id','user_id','size','price','image','region_id'];
 
     public function crop(){
         return $this->belongsTo(Crop::class);
@@ -14,5 +14,9 @@ class Farm extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function region(){
+        return $this->belongsTo(Region::class);
     }
 }

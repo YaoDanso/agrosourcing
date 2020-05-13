@@ -19,9 +19,10 @@ class CreateFarmsTable extends Migration
             $table->string('latitude');
             $table->integer('crop_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->string('size');
+            $table->integer('size');
             $table->string('price');
             $table->string('image');
+            $table->integer('region_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('crop_id')
@@ -31,6 +32,10 @@ class CreateFarmsTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
+
+            $table->foreign('region_id')
+                ->references('id')
+                ->on('regions');
         });
     }
 

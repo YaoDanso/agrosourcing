@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Crop;
 use App\Farm;
+use App\Region;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -32,7 +33,8 @@ class FarmController extends Controller
     public function create()
     {
         $crops = Crop::all();
-        return view('user.farmer.create',compact('crops'));
+        $regions = Region::all();
+        return view('user.farmer.create',compact('crops','regions'));
     }
 
     /**
@@ -58,6 +60,7 @@ class FarmController extends Controller
          $farm->crop_id = $request->crop;
          $farm->price = $request->price;
          $farm->user_id = auth()->user()->id;
+         $farm->region_id = $request->region;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');

@@ -68,6 +68,9 @@ Route::prefix('user')->group(function (){
     Route::get('/remove-cart/{id}','HomeController@removeCart')->name('user.remove.cart');
     Route::get('/product/{id}/order/{type}','HomeController@orderListDetail')->name('user.view.orderList.detail');
     Route::get('/add/{id}/{type}','HomeController@addToCart')->name('user.add.cart');
+
+    //============= User Map ============
+    Route::get('/access/map','HomeController@accessMap')->name('user.map');
 });
 
 Route::prefix('admin')->group(function (){

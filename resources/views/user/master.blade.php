@@ -61,5 +61,39 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row p-5">
+                    <form action="{{ route('user.map') }}" class="search-wrap" method="GET">
+                        <div class="input-group w-100">
+                            <input type="text" class="form-control" style="width:35%;"
+                                   placeholder="Specify a crop type" name="crop">
+                            <select class="custom-select" name="region">
+                                <?php $regions = \App\Region::all(); ?>
+                                @foreach($regions as $region)
+                                    <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @include('user.partials._leg')

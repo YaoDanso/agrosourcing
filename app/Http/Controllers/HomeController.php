@@ -218,4 +218,29 @@ class HomeController extends Controller
         return redirect()->route('user.welcome')
             ->with('success','Your order was successfully placed with code: '.$order_code);
     }
+
+    public function accessMap(){
+
+        $crop = \request('crop');
+        $region = \request('region');
+
+        $farms = Farm::join('regions','regions.id','farms.region_id')
+            ->join('crops','crops.id','=','farms.crop_id')
+            ->where('crops.name','LIKE', '%'.$crop.'%')
+            ->where('farms.region_id',$region)
+            ->get();
+
+        $warehouses = Warehouse::whereHas('crops', function ($query){
+            $query->where('name','LIKE','%'.\request('crop').'%');
+        })->join('regions','regions.id','warehouses.region_id')
+            ->where('warehouses.region_id',$region)
+            ->get();
+
+        $products = Product::join('regions','regions.id','products.region_id')
+            ->where('products.materials','LIKE', '%'.$crop.'%')
+            ->where('products.region_id',$region)
+            ->get();
+
+        return view('user.map.map',compact('farms','warehouses','products'));
+    }
 }
