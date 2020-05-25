@@ -18,7 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('dash/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
     @yield('styles')
 </head>
 

@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/country.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/map/map.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AdminLoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_admins_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/marker-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Farm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Farm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FarmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FarmController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Warehouse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Warehouse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_213223_create_farms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_213223_create_farms_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_12_155101_create_warehouses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_12_155101_create_warehouses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_12_171338_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_12_171338_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/aggregator/add_warehouse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/aggregator/add_warehouse.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/aggregator/view_warehouse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/aggregator/view_warehouse.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/farmer/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/farmer/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/order-detail-farm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/order-detail-farm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/order-detail-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/order-detail-product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/order-detail-warehouse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/order-detail-warehouse.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/order-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/order-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/product/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/product/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/product/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/map/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/map/map.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/_head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/_leg.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/_leg.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -178,7 +162,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Auth" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -186,11 +170,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Agrosourcing\app\Http\Controllers\Auth" />
+      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\admin\auth" />
+      <recent name="C:\xampp\htdocs\Agrosourcing\database\migrations" />
       <recent name="C:\xampp\htdocs\Agrosourcing\public\img" />
       <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\map" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\resources\views\user\order" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\public\img\products" />
-      <recent name="C:\xampp\htdocs\Agrosourcing\public\img\warehouses" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -239,7 +223,9 @@
       <workItem from="1587719777263" duration="13477000" />
       <workItem from="1587903138782" duration="5721000" />
       <workItem from="1588006713331" duration="6189000" />
-      <workItem from="1589367160369" duration="17669000" />
+      <workItem from="1589367160369" duration="17930000" />
+      <workItem from="1590234674459" duration="5154000" />
+      <workItem from="1590407042300" duration="7334000" />
     </task>
     <servers />
   </component>

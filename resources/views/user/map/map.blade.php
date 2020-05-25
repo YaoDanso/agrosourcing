@@ -1,11 +1,32 @@
 @extends('user.master')
 @section('styles')
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
-    <style>
-        #map { width: 100%; height: 70vh; }
-    </style>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+    #map { height: 500px;top: 0;
+        bottom: 0; }
+    .mapboxgl-canvas{
+        width: 767px !important;
+        height: 500px !important;
+    }
+    .marker {
+        background-image: url('{{asset('img/marker-icon.png')}}');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .mapboxgl-popup {
+        max-width: 200px;
+    }
+
+    .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+</style>
 @endsection
 @section('content')
     <!-- Page Heading -->
@@ -158,7 +179,7 @@
     </div>
     <div class="modal fade" id="mapModal" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Map View</h5>
@@ -167,7 +188,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div id="map"></div>
+                    <div id="map" class="w-100 mw-100"></div>
                 </div>
             </div>
         </div>
@@ -179,11 +200,91 @@
         let map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-            center: [12.550343, 55.665957], // starting position [lng, lat]
+            center: [-0.020000, 5.550000], // starting position [lng, lat]
             zoom: 9 // starting zoom
         });
-        let marker = new mapboxgl.Marker()
-            .setLngLat([12.550343, 55.665957])
-            .addTo(map);
+        var geojson = [];
+        /*let marker1 = new mapboxgl.Marker()
+            .setLngLat([-0.020000, 5.550000])
+            .addTo(map);*/
+        @foreach($farms as $farm)
+        let _geo = {
+            type: 'FeatureCollection',
+            features:[
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [{{ $farm->latitude }}, {{ $farm->longitude }}]
+                    },
+                    properties: {
+                        title: "{{ $farm->user->name }}'s Farm",
+                        description: 'Need to add some description here.',
+                        _id: '{{ $farm->id }}',
+                        type: 'farm',
+                    }
+                }
+            ]
+        };
+        geojson.push(_geo);
+        @endforeach
+        @foreach($warehouses as $warehouse)
+        let _geoWarehouse = {
+            type: 'FeatureCollection',
+            features:[
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [{{ $warehouse->latitude }}, {{ $warehouse->longitude }}]
+                    },
+                    properties: {
+                        title: "{{ $warehouse->user->name }}'s Warehouse",
+                        description: 'Need to add some description here.',
+                        _id: '{{ $warehouse->id }}',
+                        type: 'warehouse',
+                    }
+                }
+            ]
+        };
+        geojson.push(_geoWarehouse);
+        @endforeach
+        @foreach($products as $product)
+        let _geoProd = {
+            type: 'FeatureCollection',
+            features:[
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [{{ $product->latitude }}, {{ $product->longitude }}]
+                    },
+                    properties: {
+                        title: "{{ $product->name }}",
+                        description: 'Need to add some description here.',
+                        _id: '{{ $product->id }}',
+                        type: 'product',
+                    }
+                }
+            ]
+        };
+        geojson.push(_geoProd);
+        @endforeach
+        // add markers to map
+        geojson.map((feature,index) =>
+            feature.features.forEach(function(marker) {
+                // create a HTML element for each feature
+                var el = document.createElement('div');
+                el.className = 'marker';
+                let link = `/user/product/${marker.properties._id}/order/${marker.properties.type}`;
+                // make a marker for each feature and add to the map
+                new mapboxgl.Marker(el)
+                    .setLngLat(marker.geometry.coordinates)
+                    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                        .setHTML('<h5>' + marker.properties.title + '</h5>' +
+                            '<p>' + marker.properties.description + '</p>'+"<a href='"+link+"'>Go to Checkout</a>"))
+                    .addTo(map);
+            })
+        );
     </script>
 @endsection
