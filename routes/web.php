@@ -74,7 +74,21 @@ Route::prefix('user')->group(function (){
 });
 
 Route::prefix('admin')->group(function (){
-    Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::get('/','AdminController@home')->name('admin.dashboard');
+    Route::get('/login','Auth\AdminLoginController@userLogin')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/logout', 'Auth\AdminLoginController@userLogout')->name('admin.logout');
+
+    //======== Product =======
+    Route::get('/add-product', 'AdminController@addProduct')->name('admin.add.product');
+    Route::get('/view-products', 'AdminController@viewProduct')->name('admin.view.product');
+    //======== Warehouse =======
+    Route::get('/add-warehouse', 'AdminController@addWarehouse')->name('admin.add.warehouse');
+    Route::get('/view-warehouse', 'AdminController@viewWarehouse')->name('admin.view.warehouse');
+    //======== Farm =======
+    Route::get('/add-farm', 'AdminController@addFarm')->name('admin.add.farm');
+    Route::get('/view-farm', 'AdminController@viewFarm')->name('admin.view.farm');
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -21,7 +21,7 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-        $warehouses = Warehouse::where('user_id',auth()->id())->get();
+        $warehouses = Warehouse::where('user_id',auth()->id)->get();
         return view('user.aggregator.view_warehouse',compact('warehouses'));
     }
 

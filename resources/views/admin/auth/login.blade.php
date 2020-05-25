@@ -11,7 +11,7 @@
                             <div class="col-md-9 col-lg-8 mx-auto">
                                 @include('flash._notify')
                                 <h3 class="login-heading mb-4">Welcome Admin!</h3>
-                                <form method="post" action="{{ route('user.login.submit') }}">
+                                <form method="post" action="{{ route('admin.login.submit') }}">
                                     @csrf
                                     <div class="form-label-group">
                                         <input type="email" id="inputEmail" class="form-control"
@@ -31,11 +31,6 @@
                                     </div>
                                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                                 </form>
-                                <a class="btn btn-lg btn-info btn-block btn-login
-                                     text-uppercase font-weight-bold mb-2" type="submit" href="{{ route('user.register') }}">
-                                    Don't have an account? Register here
-                                </a>
-                                <div class="text-center"><a class="small" href="{{ route('user.reset.password') }}">Forgot password?</a></div>
                             </div>
                         </div>
                     </div>

@@ -21,6 +21,7 @@ class CreateAdminsTable extends Migration
             $table->string('verified_token')->nullable();
             $table->string('password');
             $table->integer('level');
+            $table->integer('status');
             $table->rememberToken();
             $table->timestamps();
         });

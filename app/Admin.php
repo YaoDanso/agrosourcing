@@ -10,6 +10,7 @@ class Admin extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = "admins";
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +37,8 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin($id){
+        return $this->where('level',1)->where('id',$id)->first() ? true : false;
+    }
 }
