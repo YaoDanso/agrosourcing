@@ -20,7 +20,7 @@ class CreateWarehousesTable extends Migration
             $table->string('longitude');
             $table->string('price');
             $table->string('image');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('region_id')->references('id')->on('regions');

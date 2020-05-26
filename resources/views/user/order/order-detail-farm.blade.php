@@ -12,9 +12,19 @@
                 <img class="card-img-top" src="{{ asset('img/farms/'.$farm->image) }}" alt="farm image" height="400px">
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                <h2 class="font-weight-bold mb-3">Project By {{ $farm->user->name }}</h2>
-                @if($farm->user->profile->company !== null)
-                    <h3 class="font-weight-light mb-3">{{ $farm->user->profile->company }}</h3>
+                <h2 class="font-weight-bold mb-3">
+                    Project By
+                    @if($farm->user_id != null)
+                        {{ $farm->user->name }}
+                        @if($farm->user->profile->company !== null) - {{ $farm->user->profile->company }}@endif
+                    @else
+                        Agrosourcing Support
+                    @endif
+                </h2>
+                @if($farm->user_id != null)
+                    @if($farm->user->profile->company !== null)
+                        <h3 class="font-weight-light mb-3">{{ $farm->user->profile->company }}</h3>
+                    @endif
                 @endif
                 <h4 class="font-weight-light mb-3">Crop Type: {{ $farm->crop->name }}</h4>
                 <h4 class="font-weight-light mb-3">Price: GHS{{ $farm->price }} per unit</h4>

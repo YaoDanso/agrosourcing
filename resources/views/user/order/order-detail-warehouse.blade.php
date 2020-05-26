@@ -12,9 +12,18 @@
                 <img class="card-img-top" src="{{ asset('img/warehouses/'.$warehouse->image) }}" alt="warehouse image" height="400px">
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                <h2 class="font-weight-bold mb-3">Project By {{ $warehouse->user->name }}</h2>
-                @if($warehouse->user->profile->company !== null)
-                    <h3 class="font-weight-light mb-3">{{ $warehouse->user->profile->company }}</h3>
+                <h2 class="font-weight-bold mb-3">Project By
+                    @if($warehouse->user_id != null)
+                        {{ $warehouse->user->name }}
+                        @if($warehouse->user->profile->company !== null) - {{ $warehouse->user->profile->company }}@endif
+                    @else
+                        Agrosourcing Support
+                    @endif
+                </h2>
+                @if($warehouse->user_id != null)
+                    @if($warehouse->user->profile->company !== null)
+                        <h3 class="font-weight-light mb-3">{{ $warehouse->user->profile->company }}</h3>
+                    @endif
                 @endif
                 <h4 class="font-weight-light mb-3">Crop Type(s):
                     @foreach($warehouse->crops as $crop)

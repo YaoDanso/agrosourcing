@@ -86,10 +86,9 @@ class HomeController extends Controller
         if ($type == 'farm'){
             $qty = \request('qty');
             $farm = Farm::where('id',$id)->first();
-            $userId = auth()->user()->uuid;
             \Cart::add(array(
                 'id' => Str::random(6).$farm->id,
-                'name' => $farm->user->name . " farm",
+                'name' => $farm->user_id == null ? 'Agrosourcing Support' : $farm->user->name . " farm",
                 'price' => (double)$farm->price,
                 'quantity' => $qty,
                 'attributes' => array(
@@ -107,7 +106,7 @@ class HomeController extends Controller
             $warehouse = Warehouse::where('id',$id)->first();
             \Cart::add(array(
                 'id' => Str::random(6).$warehouse->id,
-                'name' => $warehouse->user->name . " warehouse",
+                'name' => $warehouse->user_id == null ? 'Agrosourcing Support' : $warehouse->user->name . " warehouse",
                 'price' => (double)$warehouse->price,
                 'quantity' => $qty,
                 'attributes' => array(

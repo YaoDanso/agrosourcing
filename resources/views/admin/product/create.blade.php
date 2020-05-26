@@ -7,8 +7,10 @@
 
     <div class="card shadow mb-4 p-3">
         <div class="card-body">
+            <h5 class="font-weight-lighter">PROVIDE PRODUCT DETAILS</h5>
+            <p class="font-weight-normal">All fields are required.</p>
             @include('flash._notify')
-            <form action="{{ route('user.store.product') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.store.product') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-6">

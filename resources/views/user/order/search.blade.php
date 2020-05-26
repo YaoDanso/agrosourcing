@@ -34,8 +34,13 @@
                                 <img class="card-img-top" src="{{ asset('img/warehouses/'.$warehouse->image) }}" alt="warehouse image" height="200px">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="fa fa-dot-circle text-warning"></i> Warehouse</h5>
-                                    <h6 class="card-text">{{$warehouse->user->name}}
-                                        @if($warehouse->user->profile->company !== null) - {{ $warehouse->user->profile->company }}@endif</h6>
+                                    <h6 class="card-text">
+                                        @if($warehouse->user_id != null)
+                                            {{ $warehouse->user->name }}
+                                            @if($warehouse->user->profile->company !== null) - {{ $warehouse->user->profile->company }}@endif
+                                        @else
+                                            Agrosourcing Support
+                                        @endif
                                     <p class="card-text">{{ $warehouse->region->name }}</p>
                                     <p class="card-text">Crop Type(s): {{$warehouse->crops[0]->name}} </p>
                                     <p class="card-text">Price: GHS{{ $warehouse->price }} per unit </p>
@@ -59,8 +64,14 @@
                                 <img class="card-img-top" src="{{ asset('img/farms/'.$farm->image) }}" alt="warehouse image" height="200px">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="fa fa-dot-circle text-success"></i> Farm</h5>
-                                    <h6 class="card-text">{{ $farm->user->name }}
-                                        @if($farm->user->profile->company !== null) - {{ $farm->user->profile->company }}@endif</h6>
+                                    <h6 class="card-text">
+                                        @if($farm->user_id != null)
+                                            {{ $farm->user->name }}
+                                            @if($farm->user->profile->company !== null) - {{ $farm->user->profile->company }}@endif
+                                        @else
+                                            Agrosourcing Support
+                                        @endif
+                                    </h6>
                                     <p class="card-text">Crop Type: {{ $farm->crop->name }}</p>
                                     <p class="card-text">Farm Size: {{ $farm->size }}</p>
                                     <p class="card-text">Price: GHS{{ $farm->price }} per unit</p>

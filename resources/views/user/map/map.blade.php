@@ -208,7 +208,7 @@
             .setLngLat([-0.020000, 5.550000])
             .addTo(map);*/
         @foreach($farms as $farm)
-        let _geo = {
+        let _geoFarm_{{$loop->iteration}} = {
             type: 'FeatureCollection',
             features:[
                 {
@@ -218,7 +218,7 @@
                         coordinates: [{{ $farm->latitude }}, {{ $farm->longitude }}]
                     },
                     properties: {
-                        title: "{{ $farm->user->name }}'s Farm",
+                        title: @if($farm->user_id == null)"Agrosourcing Support"@else"{{ $farm->user->name }}'s Farm"@endif,
                         description: 'Need to add some description here.',
                         _id: '{{ $farm->id }}',
                         type: 'farm',
@@ -226,10 +226,10 @@
                 }
             ]
         };
-        geojson.push(_geo);
+        geojson.push(_geoFarm_{{$loop->iteration}});
         @endforeach
         @foreach($warehouses as $warehouse)
-        let _geoWarehouse = {
+        let _geoWarehouse_{{$loop->iteration}} = {
             type: 'FeatureCollection',
             features:[
                 {
@@ -239,7 +239,7 @@
                         coordinates: [{{ $warehouse->latitude }}, {{ $warehouse->longitude }}]
                     },
                     properties: {
-                        title: "{{ $warehouse->user->name }}'s Warehouse",
+                        title: @if($warehouse->user_id == null)"Agrosourcing support"@else"{{ $warehouse->user->name }}'s Warehouse"@endif,
                         description: 'Need to add some description here.',
                         _id: '{{ $warehouse->id }}',
                         type: 'warehouse',
@@ -247,10 +247,10 @@
                 }
             ]
         };
-        geojson.push(_geoWarehouse);
+        geojson.push(_geoWarehouse_{{$loop->iteration}});
         @endforeach
         @foreach($products as $product)
-        let _geoProd = {
+        let _geoProd_{{$loop->iteration}} = {
             type: 'FeatureCollection',
             features:[
                 {
@@ -268,8 +268,9 @@
                 }
             ]
         };
-        geojson.push(_geoProd);
+        geojson.push(_geoProd_{{$loop->iteration}});
         @endforeach
+        console.log("YOLO",geojson);
         // add markers to map
         geojson.map((feature,index) =>
             feature.features.forEach(function(marker) {

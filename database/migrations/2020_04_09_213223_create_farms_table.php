@@ -18,7 +18,7 @@ class CreateFarmsTable extends Migration
             $table->string('longitude');
             $table->string('latitude');
             $table->integer('crop_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->integer('size');
             $table->string('price');
             $table->string('image');

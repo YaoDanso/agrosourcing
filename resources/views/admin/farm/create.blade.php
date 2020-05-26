@@ -12,7 +12,7 @@
         <p class="font-weight-normal">Choose a crop type, the wastes will be generated for you.</p>
         @include('flash._notify')
         <div class="card-body">
-            <form action="{{ route('user.store.farm') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.store.farm') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-6">

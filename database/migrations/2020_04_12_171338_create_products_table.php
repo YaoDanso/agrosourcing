@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('latitude');
             $table->string('image');
             $table->text('wastes');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('region_id')->references('id')->on('regions');

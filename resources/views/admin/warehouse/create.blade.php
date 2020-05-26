@@ -10,8 +10,10 @@
 
     <div class="card shadow mb-4 p-3">
         <div class="card-body">
+            <h5 class="font-weight-lighter">PROVIDE WAREHOUSE DETAILS</h5>
+            <p class="font-weight-normal">Choose a crop type, the wastes will be generated for you.</p>
             @include('flash._notify')
-            <form action="{{ route('user.store.warehouse') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.store.warehouse') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row">

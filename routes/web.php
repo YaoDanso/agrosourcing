@@ -81,13 +81,21 @@ Route::prefix('admin')->group(function (){
 
     //======== Product =======
     Route::get('/add-product', 'AdminController@addProduct')->name('admin.add.product');
+    Route::post('/add-product', 'AdminController@storeProduct')->name('admin.store.product');
     Route::get('/view-products', 'AdminController@viewProduct')->name('admin.view.product');
     //======== Warehouse =======
     Route::get('/add-warehouse', 'AdminController@addWarehouse')->name('admin.add.warehouse');
+    Route::post('/add-warehouse', 'AdminController@storeWarehouse')->name('admin.store.warehouse');
     Route::get('/view-warehouse', 'AdminController@viewWarehouse')->name('admin.view.warehouse');
     //======== Farm =======
     Route::get('/add-farm', 'AdminController@addFarm')->name('admin.add.farm');
+    Route::post('/add-farm', 'AdminController@storeFarm')->name('admin.store.farm');
     Route::get('/view-farm', 'AdminController@viewFarm')->name('admin.view.farm');
+
+    //========== Users============
+    Route::get('/users', 'AdminController@viewUsers')->name('admin.view.users');
+    Route::get('/suspend-user/{id}', 'AdminController@suspendUser')->name('admin.suspend.user');
+    Route::get('/unsuspend-user/{id}', 'AdminController@unsuspendUser')->name('admin.unsuspend.user');
 
 });
 
