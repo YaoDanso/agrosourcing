@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Crop;
 use App\Farm;
+use App\Notifications\AdminNotification;
+use App\Notifications\UserNotification;
 use App\Region;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 
 class FarmController extends Controller
@@ -70,6 +74,17 @@ class FarmController extends Controller
             $farm->image = $new_name;
         }
         $farm->save();
+
+
+        $title = "Farm";
+        $message = "You added a farm successfully!";
+        Notification::send(\auth()->user(),new UserNotification($title,$message));
+
+        $admins = Admin::where('level',1)->get();
+        $messageAdmin = "A new farm project has been created!";
+        foreach ($admins as $admin){
+            Notification::send($admin, new AdminNotification($messageAdmin));
+        }
 
         return redirect()->route('user.view.farm')
             ->with('success','Farm added successfully!');

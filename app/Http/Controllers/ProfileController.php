@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\UserNotification;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -42,7 +44,11 @@ class ProfileController extends Controller
             request()->user()->fill([
                 'password' => Hash::make($newPassword)
             ])->save();
+            $title = "Password";
+            $message = "Your password was changed!";
+            Notification::send(\auth()->user(),new UserNotification($title,$message));
             request()->session()->flash('success','password changed successfully');
+
             return redirect(route('user.profile'));
         }else{
             request()->session()->flash('error','Make sure you enter your right old password!');
@@ -57,7 +63,9 @@ class ProfileController extends Controller
         Profile::where('user_id',\auth()->user()->id)->update([
             'bio' => $request->bio
         ]);
-
+        $title = "Bio";
+        $message = "You updated your bio successfully!";
+        Notification::send(\auth()->user(),new UserNotification($title,$message));
         return redirect(route('user.profile'))->with('success','Bio updated successfully!');
     }
 
@@ -79,12 +87,17 @@ class ProfileController extends Controller
                 ]);
             User::where('id',\auth()->user()->id)->update(['phone'=>$request->phone]);
 
+            $title = "Profile";
+            $message = "You updated your profile!";
+            Notification::send(\auth()->user(),new UserNotification($title,$message));
             return redirect()->route('user.profile')
                 ->with('success','Details was successfully updated');
         }else{
             Profile::where('user_id',auth()->user()->id)->update(['company' => $request->company]);
             User::where('id',\auth()->user()->id)->update(['phone'=>$request->phone]);
-
+            $title = "Profile";
+            $message = "You updated your profile!";
+            Notification::send(\auth()->user(),new UserNotification($title,$message));
             return redirect()->route('user.profile')
                 ->with('success','Details was successfully updated');
         }

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
+use App\Notifications\AdminNotification;
+use App\Notifications\UserNotification;
 use App\Product;
 use App\Region;
 use App\Waste;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
@@ -68,6 +72,15 @@ class ProductController extends Controller
                 'user_id' => auth()->user()->id,
                 'image' => $new_name
             ]);
+        }
+        $title = "Product";
+        $message = "You added a new product successfully!";
+        Notification::send(\auth()->user(),new UserNotification($title,$message));
+
+        $admins = Admin::where('level',1)->get();
+        $messageAdmin = "A new product has been added!";
+        foreach ($admins as $admin){
+            Notification::send($admin, new AdminNotification($messageAdmin));
         }
 
         return redirect()->route('user.view.product')

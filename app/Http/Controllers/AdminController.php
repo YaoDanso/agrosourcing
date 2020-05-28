@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Crop;
 use App\Farm;
+use App\Notifications\AdminNotification;
 use App\Product;
 use App\Region;
 use App\User;
 use App\Warehouse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
@@ -93,6 +95,10 @@ class AdminController extends Controller
         }
         $farm->save();
 
+        //sending notification
+        $message = "You added a new farm project";
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
         return redirect()->route('admin.view.farm')
             ->with('success','Farm added successfully!');
     }
@@ -123,6 +129,10 @@ class AdminController extends Controller
 
         $warehouse->save();
         $warehouse->crops()->sync($request->crops, false);
+        //sending notification
+        $message = "You added a new warehouse project";
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
 
         return redirect()->route('admin.view.warehouse')
             ->with('success','Warehouse successfully added!');
@@ -152,6 +162,10 @@ class AdminController extends Controller
                 'wastes' => $request->wastes,
                 'image' => $new_name
             ]);
+            //sending notification
+            $message = "You added a new product!";
+            //database Notification
+            Notification::send(auth()->user(),new AdminNotification($message));
         }
 
         return redirect()->route('admin.view.product')
@@ -166,13 +180,30 @@ class AdminController extends Controller
     public function suspendUser($id){
         User::where('id',$id)
             ->update(['status' => 0]);
+        //sending notification
+        $message = "You suspended an administrator";
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
         return redirect()->route('admin.view.users')
             ->with('success','User Suspended successfully!');
     }
     public function unsuspendUser($id){
         User::where('id',$id)
             ->update(['status' => 1]);
+        //sending notification
+        $message = "You unsuspended an administrator";
+
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
         return redirect()->route('admin.view.users')
             ->with('success','User Unsuspended successfully!');
+    }
+
+    public function markAsRead(){
+
+        foreach(auth()->user()->unReadNotifications as $notification){
+            $notification->markAsRead();
+        }
+        return redirect()->back();
     }
 }

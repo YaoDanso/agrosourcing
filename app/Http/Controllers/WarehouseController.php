@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Crop;
+use App\Notifications\AdminNotification;
+use App\Notifications\UserNotification;
 use App\Region;
 use App\Warehouse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 
 class WarehouseController extends Controller
@@ -70,6 +74,16 @@ class WarehouseController extends Controller
 
         $warehouse->save();
         $warehouse->crops()->sync($request->crops, false);
+
+        $title = "Warehouse";
+        $message = "You added a warehouse successfully!";
+        Notification::send(\auth()->user(),new UserNotification($title,$message));
+
+        $admins = Admin::where('level',1)->get();
+        $messageAdmin = "A new warehouse project has been created!";
+        foreach ($admins as $admin){
+            Notification::send($admin, new AdminNotification($messageAdmin));
+        }
 
         return redirect()->route('user.view.warehouse')
             ->with('success','Warehouse successfully added!');

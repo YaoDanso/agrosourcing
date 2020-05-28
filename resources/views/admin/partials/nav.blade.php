@@ -11,13 +11,28 @@
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">0</span>
+                <span class="badge badge-danger badge-counter">{{ auth()->user()->unReadNotifications->count() }}</span>
             </a>
             <!-- Dropdown - Alerts -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                     All Notifications
                 </h6>
+                @if(auth()->user()->notifications->count())
+                    @foreach(auth()->user()->unReadNotifications as $notification)
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <div>
+                                <div class="small text-gray-500">{{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}</div>
+                                <span class="font-weight-bold">{{ $notification->data["message"] }}</span>
+                            </div>
+                        </a>
+                    @endforeach
+                    <a class="dropdown-item text-center small text-gray-500" href="{{ route('admin.notification.read') }}">
+                        Mark All As Read
+                    </a>
+                @else
+                    <a class="dropdown-item text-center small text-gray-500" href="#">No notifications available</a>
+                @endif
             </div>
         </li>
 

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Farm;
+use App\Notifications\AdminNotification;
+use App\Notifications\UserNotification;
 use App\Order;
 use App\OrderDetail;
 use App\Product;
@@ -13,6 +16,7 @@ use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Str;
 
 class HomeController extends Controller
@@ -214,6 +218,14 @@ class HomeController extends Controller
             ]);
         }
         \Cart::clear();
+        $title = "Order";
+        $message = "You have successfully place an order with code $order_code";
+        Notification::send(\auth()->user(),new UserNotification($title,$message));
+        $admins = Admin::where('level',1)->get();
+        $messageAdmin = "You have received an order!";
+        foreach ($admins as $admin){
+            Notification::send($admin, new AdminNotification($messageAdmin));
+        }
         return redirect()->route('user.welcome')
             ->with('success','Your order was successfully placed with code: '.$order_code);
     }
@@ -245,4 +257,16 @@ class HomeController extends Controller
 
         return view('user.map.map',compact('farms','warehouses','products'));
     }
+
+    public function markAsRead(){
+
+        foreach(auth()->user()->unReadNotifications as $notification){
+            $notification->markAsRead();
+        }
+        return redirect()->back();
+    }
+
+    /*public function notifications(){
+        return view('user.notifications');
+    }*/
 }

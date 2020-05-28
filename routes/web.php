@@ -71,6 +71,9 @@ Route::prefix('user')->group(function (){
 
     //============= User Map ============
     Route::get('/access/map','HomeController@accessMap')->name('user.map');
+
+    Route::get('/mark-as-read', 'HomeController@markAsRead')->name('user.mark.notify');
+    Route::get('/notifications', 'HomeController@notifications')->name('user.notifications');
 });
 
 Route::prefix('admin')->group(function (){
@@ -97,6 +100,8 @@ Route::prefix('admin')->group(function (){
     Route::get('/suspend-user/{id}', 'AdminController@suspendUser')->name('admin.suspend.user');
     Route::get('/unsuspend-user/{id}', 'AdminController@unsuspendUser')->name('admin.unsuspend.user');
 
+    //=========== Admin Notification
+    Route::get('mark-as-read','AdminController@markAsRead')->name('admin.notification.read');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
