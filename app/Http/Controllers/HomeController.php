@@ -38,7 +38,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.dashboard');
+        $farms = Farm::all();
+        $products = Product::all();
+        $warehouses = Warehouse::all();
+        $orders = Order::where('user_id',\auth()->user()->id)->get();
+
+        return view('user.dashboard',compact('farms','products','warehouses','orders'));
     }
 
     public function cart()

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Crop;
 use App\Farm;
 use App\Notifications\AdminNotification;
+use App\Order;
 use App\Product;
 use App\Region;
 use App\User;
@@ -30,10 +31,13 @@ class AdminController extends Controller
             'group_by_period' => 'month',
             'chart_type' => 'bar',
         ];
-
         $chart = new LaravelChart($chart_options);
 
-        return view('admin.dashboard',compact('chart'));
+        $farms = Farm::all();
+        $products = Product::all();
+        $warehouses = Warehouse::all();
+        $orders = Order::all();
+        return view('admin.dashboard',compact('chart','farms','products','warehouses','orders'));
     }
 
     public function addProduct(){
