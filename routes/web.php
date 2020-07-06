@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('user.welcome');
-});
+Route::get('/', 'WebsiteController@home')->name('web.home');
+Route::get('/about', 'WebsiteController@about')->name('web.about');
 
 Auth::routes();
 

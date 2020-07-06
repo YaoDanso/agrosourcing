@@ -15,7 +15,7 @@ class CreateWarehousesTable extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('region_id')->unsigned();
+            $table->integer('region_id')->unsigned();
             $table->string('latitude');
             $table->string('longitude');
             $table->string('price');
