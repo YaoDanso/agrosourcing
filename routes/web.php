@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'WebsiteController@home')->name('web.home');
 Route::get('/about', 'WebsiteController@about')->name('web.about');
+Route::get('/sourcemap', 'WebsiteController@sourcemap')->name('web.sourcemap');
+Route::get('/upcycling', 'WebsiteController@upcycling')->name('web.upcycling');
+Route::get('/research', 'WebsiteController@research')->name('web.research');
+Route::get('/contact', 'WebsiteController@contact')->name('web.contact');
 
 Auth::routes();
 

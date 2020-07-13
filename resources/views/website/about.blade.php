@@ -9,11 +9,7 @@
                 <p class="lead pb-3">Our greatness has always supported our push.</p>
                 <div class="row mt-4 mb-4">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div id="owl-demo" class="owl-carousel owl-theme">
-                            <div class="item"><img src="{{ asset('web/img/vegetables.jpg') }}" class="img-fluid" alt="veg"></div>
-                            <div class="item"><img src="{{ asset('web/img/vegetables.jpg') }}" class="img-fluid" alt="veg"></div>
-                            <div class="item"><img src="{{ asset('web/img/vegetables.jpg') }}" class="img-fluid" alt="veg"></div>
-                        </div>
+                        @include('website.partials.slider')
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <p class="font-weight-light about-text">
@@ -86,23 +82,7 @@
         </section>'
 
 
-        <section class="py-5 mt-5 mb-5" id="partners">
-            <div class="container">
-                <h2 class="font-weight-light">Our Partners</h2>
-                <p class="mb-5 lead">The trust partners we have got</p>
-                <section class="customer-logos slider">
-                    <div class="slide">
-                        <img src="{{ asset('web/img/partner1.jpg') }}">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('web/img/partner2.jpg') }}">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('web/img/partner3.jpg') }}">
-                    </div>
-                </section>
-            </div>
-        </section>
+        @include('website.partials.partners')
 
     </main>
 @endsection

@@ -14,19 +14,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('web.home')}}#our-skills">Our Skills</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('web.about') }}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#what-we-do">What We Do</a>
+                    <a class="nav-link" href="{{ route('web.sourcemap') }}">SourceMap</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#partners">Partners</a>
+                    <a class="nav-link" href="{{route('web.upcycling')}}">UpCycling</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#our-team">Our Team</a>
+                    <a class="nav-link" href="{{route('web.research')}}">Our Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('web.contact')}}">Contact Us</a>
                 </li>
             </ul>
         </div>

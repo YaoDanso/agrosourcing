@@ -101,11 +101,7 @@
                 <p class="lead pb-3">Our greatness has always supported our push.</p>
                 <div class="row mt-4">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div id="owl-demo" class="owl-carousel owl-theme">
-                            <div class="item"><img src="{{ asset('web/img/vegetables.jpg') }}" class="img-fluid" alt="veg"></div>
-                            <div class="item"><img src="{{ asset('web/img/vegetables.jpg') }}" class="img-fluid" alt="veg"></div>
-                            <div class="item"><img src="{{ asset('web/img/vegetables.jpg') }}" class="img-fluid" alt="veg"></div>
-                        </div>
+                        @include('website.partials.slider')
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <p class="font-weight-light about-text">
@@ -120,57 +116,9 @@
         </section>
 
         <!-- Categories -->
-        <section class="py-5 mt-5" id="what-we-do" style="background-color: #f1f1f1">
-            <div class="container">
-                <h2 class="font-weight-light">What We Offer</h2>
-                <p class="mb-5 lead">The categories we provide</p>
+       @include('website.partials.what_we_offer')
 
-                <div class="row">
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">CONNECTIVITY</h4>
-                            <p class="card-text lead">
-                                Our Logistics management system connects Processing Companies and Produce Exporters to consistent, timely and cost-efficient supply of their needed agricultural produce or residue
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">GREENCOAL</h4>
-                            <p class="card-text lead">
-                                Our brand of eco-friendly briquette Charcoal is made from Coconut Husk and Rice Husk. GreenCoal is made to burn for long and produce very little smoke.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">POTASSIUM CARBONATE SALT</h4>
-                            <p class="card-text lead">
-                                We use Cocoa Pods to produce Potassium Carbonate Salt for delivery to local cosmetics companies who use it to Produce the African Black Soap
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-5 mt-5" id="partners">
-            <div class="container">
-                <h2 class="font-weight-light">Our Partners</h2>
-                <p class="mb-5 lead">The trust partners we have got</p>
-                <section class="customer-logos slider">
-                    <div class="slide">
-                        <img src="{{ asset('web/img/partner1.jpg') }}">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('web/img/partner2.jpg') }}">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('web/img/partner3.jpg') }}">
-                    </div>
-                </section>
-            </div>
-        </section>
+        @include('website.partials.partners')
 
         <section class="py-5 mt-5" id="our-team" style="background-color: #f1f1f1">
             <div class="container">
