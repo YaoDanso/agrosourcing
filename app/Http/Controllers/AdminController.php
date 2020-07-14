@@ -8,6 +8,7 @@ use App\Notifications\AdminNotification;
 use App\Order;
 use App\Product;
 use App\Region;
+use App\Role;
 use App\User;
 use App\Warehouse;
 use Illuminate\Http\Request;
@@ -209,5 +210,22 @@ class AdminController extends Controller
             $notification->markAsRead();
         }
         return redirect()->back();
+    }
+
+    public function roles(){
+        $roles = Role::all();
+        return view('admin.roles.role',compact('roles'));
+    }
+
+    public function role(Request $request){
+        Role::create([
+           'name' => $request->role
+        ]);
+        return redirect()->route('admin.roles')->with('success','Role added successfully');
+    }
+
+    public function roleDelete(Role $role){
+        $role->delete();
+        return redirect()->route('admin.roles')->with('success','Role deleted successfully');
     }
 }

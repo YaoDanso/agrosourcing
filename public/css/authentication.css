@@ -25,6 +25,22 @@
     border-radius: 2rem;
 }
 
+.btn-primary{
+    background: #81B73E !important;
+    border: 1px solid #81B73E !important;
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background: #81B73E !important;
+    border: 1px solid #81B73E !important;
+    color: #fff;
+}
+
+.text-heading{
+    color: #81B73E !important;
+}
+
 .form-label-group {
     position: relative;
     margin-bottom: 1rem;
@@ -34,7 +50,7 @@
 .form-label-group>label {
     padding: var(--input-padding-y) var(--input-padding-x);
     height: auto;
-    border-radius: 2rem;
+    /*border-radius: 2rem;*/
 }
 
 .form-label-group>label {

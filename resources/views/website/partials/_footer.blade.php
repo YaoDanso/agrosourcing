@@ -3,13 +3,13 @@
         <div class="footer-left">
             <img src="{{ asset('web/img/agrosourcing.jpg') }}" alt="" height="70px">
             <p class="footer-links">
-                <a href="#">Home</a>
+                <a href="{{ route('web.home') }}">Home</a>
                 ·
-                <a href="#">Blog</a>
+                <a href="{{ route('user.register') }}">Become a member</a>
                 ·
-                <a href="#">Pricing</a>
+                <a href="{{ route('user.login') }}">Login</a>
                 ·
-                <a href="#">About</a>
+                <a href="{{ route('web.sourcemap') }}">Sourcemap</a>
             </p>
 
             <p class="footer-company-name">Agrosourcing limited &copy; 2020</p>
@@ -18,7 +18,7 @@
 
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>1st Osu Badu Street</span> Accra, Ghana</p>
+                <p cl><span>1st Osu Badu Street</span> Accra, Ghana</p>
             </div>
 
             <div>

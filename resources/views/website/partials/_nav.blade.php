@@ -9,11 +9,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('web.home') }}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('web.about') }}">About Us</a>
                 </li>
                 <li class="nav-item">
@@ -28,6 +23,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('web.contact')}}">Contact Us</a>
                 </li>
+                @if(auth()->check())
+                    <li class="nav-item">
+                        <a class="btn btn-primary pl-4 pr-4" href="{{route('user.welcome')}}">Dashboard</a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="btn btn-primary pl-4 pr-4" href="{{route('user.login')}}">Login <i class="fa fa-user-circle"></i></a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

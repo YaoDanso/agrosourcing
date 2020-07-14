@@ -5,7 +5,7 @@
         <!-- About Us-->
         <section class="pt-5 pb-5 mt-5 mb-5" id="about-us"mas>
             <div class="container">
-                <h3 class="display-4">About Agrosourcing Ltd</h3>
+                <h3 class="display-4 text-heading">About Agrosourcing Ltd</h3>
                 <p class="lead pb-3">Our greatness has always supported our push.</p>
                 <div class="row mt-4 mb-4">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -24,7 +24,7 @@
                 <div class="row pt-4">
                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                         <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">DEVELOPMENT OF SUPPLY CHAIN TECHNOLOGIES</h4>
+                            <h4 class="card-title text-uppercase font-weight-normal p-2 text-heading">DEVELOPMENT OF SUPPLY CHAIN TECHNOLOGIES</h4>
                             <p class="card-text lead">
                                 We develop and offer robust, efficient and innovative supply chain technologies in the
                                 agricultural sector that are capable of eliminating the bottlenecks that exists between
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                         <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">VALUE ADDITION/ UPCYCLING OF PRODUCE AND RESIDUE</h4>
+                            <h4 class="card-title text-uppercase font-weight-normal p-2 text-heading">VALUE ADDITION/ UPCYCLING OF PRODUCE AND RESIDUE</h4>
                             <p class="card-text lead">
                                 We develop business models around agriculturally based waste as an alternative to traditional
                                 waste disposal. We transform by-products and waste materials of agricultural production and
@@ -47,39 +47,7 @@
         </section>
 
         <!-- Categories -->
-        <section class="py-5 mt-5" id="what-we-do" style="background-color: #f1f1f1">
-            <div class="container">
-                <h2 class="font-weight-light">What We Offer</h2>
-                <p class="mb-5 lead">The categories we provide</p>
-
-                <div class="row">
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">CONNECTIVITY</h4>
-                            <p class="card-text lead">
-                                Our Logistics management system connects Processing Companies and Produce Exporters to consistent, timely and cost-efficient supply of their needed agricultural produce or residue
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">GREENCOAL</h4>
-                            <p class="card-text lead">
-                                Our brand of eco-friendly briquette Charcoal is made from Coconut Husk and Rice Husk. GreenCoal is made to burn for long and produce very little smoke.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="shadow-sm mb-5 bg-white p-4">
-                            <h4 class="card-title text-uppercase font-weight-normal p-2">POTASSIUM CARBONATE SALT</h4>
-                            <p class="card-text lead">
-                                We use Cocoa Pods to produce Potassium Carbonate Salt for delivery to local cosmetics companies who use it to Produce the African Black Soap
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>'
+        @include('website.partials.what_we_offer')
 
 
         @include('website.partials.partners')

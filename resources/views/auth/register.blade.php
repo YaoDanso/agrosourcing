@@ -66,7 +66,7 @@
                                     <button class="btn btn-lg btn-primary btn-block btn-login
                                      text-uppercase font-weight-bold mb-2" type="submit">Create new account</button>
                                 </form>
-                                <a class="btn btn-lg btn-info btn-block btn-login
+                                <a class="btn btn-lg btn-info btn-block btn-login btn-primary
                                      text-uppercase font-weight-bold mb-2" type="submit" href="{{ route('user.login') }}">
                                     Already have an account? Login here</a>
                             </div>

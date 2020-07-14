@@ -105,6 +105,9 @@ Route::prefix('admin')->group(function (){
 
     //=========== Admin Notification
     Route::get('mark-as-read','AdminController@markAsRead')->name('admin.notification.read');
+    Route::get('roles','AdminController@roles')->name('admin.roles');
+    Route::post('role','AdminController@role')->name('admin.roles.submit');
+    Route::get('role/{role}','AdminController@roleDelete')->name('admin.roles.delete');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

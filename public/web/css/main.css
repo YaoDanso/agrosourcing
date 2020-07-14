@@ -12,6 +12,22 @@ html,body{
     background-size: cover;
 }
 
+.text-heading{
+    color: #81B73E !important;
+}
+
+.btn-primary{
+    background: #81B73E !important;
+    border: 1px solid #81B73E !important;
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background: #81B73E !important;
+    border: 1px solid #81B73E !important;
+    color: #fff;
+}
+
 .display-4{
     font-size: 2.2em !important;
 }

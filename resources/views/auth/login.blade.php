@@ -29,13 +29,13 @@
                                         <input type="checkbox" class="custom-control-input" id="customCheck1" name="remember">
                                         <label class="custom-control-label" for="customCheck1">Remember password</label>
                                     </div>
-                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 btn-primary" type="submit">Sign in</button>
                                 </form>
-                                <a class="btn btn-lg btn-info btn-block btn-login
+                                <a class="btn btn-lg btn-info btn-block btn-login btn-primary
                                      text-uppercase font-weight-bold mb-2" type="submit" href="{{ route('user.register') }}">
                                     Don't have an account? Register here
                                 </a>
-                                <div class="text-center"><a class="small" href="{{ route('user.reset.password') }}">Forgot password?</a></div>
+                                <div class="text-center"><a class="small text text-heading" href="{{ route('user.reset.password') }}">Forgot password?</a></div>
                             </div>
                         </div>
                     </div>

@@ -11,14 +11,14 @@
 
         <section class="py-5 mt-5">
             <div class="container">
-                <h2 class="font-weight-light mb-5">Get In touch with us</h2>
+                <h2 class="font-weight-light mb-5 text-heading">Get In touch with us</h2>
                 <div class="row ">
                     <div class="col-md-4 col-sm-12 col-xs-12 mb-5">
                         <div class="">
-                            <h4 class="card-title text-uppercase font-weight-bold">Kindly drop us a line</h4>
+                            <h4 class="card-title text-uppercase font-weight-bold text-heading">Kindly drop us a line</h4>
                             <p class="card-text lead">Reach out to us either through the contact details below or by filling out the contact form and we will
                                 get back to you immediately.</p>
-                            <p class="card-text lead mb-1 font-weight-bold">Headquarters</p>
+                            <p class="card-text lead mb-1 font-weight-bold text-heading">Headquarters</p>
                             <table>
                                 <tr>
                                     <td>
@@ -67,7 +67,7 @@
                                     <textarea class="form-control" rows="6" name="message" required>{{ old('message') }}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button class="cta-select-active btn btn-warning" type="submit"><i class="fa fa-envelope"></i> Send Message</button>
+                                    <button class="btn btn-primary" type="submit"><i class="fa fa-envelope"></i> Send Message</button>
                                 </div>
                             </form>
                         </div>

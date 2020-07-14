@@ -26,9 +26,9 @@
                     Currently, we have a number of value-added products in various stages of development which are being
                     formed from several agricultural by-products and residues. These include</p>
                     <ul class="mt-3" style="list-style-type: square;list-style-position: outside;">
-                        <li class="pt-3 font-weight-normal lead">Crude Potassium Carbonate from Cocoa Pod Husks</li>
-                        <li class="pt-3 font-weight-normal lead">Compost from fruit and vegetable waste</li>
-                        <li class="pt-3 font-weight-normal lead">Essential Oils from some plant residue</li>
+                        <li class="pt-3 font-weight-normal lead text-heading">Crude Potassium Carbonate from Cocoa Pod Husks</li>
+                        <li class="pt-3 font-weight-normal lead text-heading">Compost from fruit and vegetable waste</li>
+                        <li class="pt-3 font-weight-normal lead text-heading">Essential Oils from some plant residue</li>
                     </ul>
             </div>
         </section>

@@ -2,29 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/environment.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/help.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mission.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/recycle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/user_flow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/partials/banner.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/partials/partners.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/partials/slider.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/partials/what_we_offer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/research.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/role.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.styleci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/authentication.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/_footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/partners.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/partners.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/what_we_offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/what_we_offer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -180,23 +176,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/website" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/resources/views/website/partials" />
-      <recent name="$PROJECT_DIR$/public/web" />
-      <recent name="$PROJECT_DIR$/app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/website" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/resources/views/website" />
+      <recent name="$PROJECT_DIR$/resources/views/website/partials" />
+      <recent name="$PROJECT_DIR$/public/web" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="RunManager">
@@ -246,7 +242,9 @@
       <workItem from="1594303022597" duration="29000" />
       <workItem from="1594303085145" duration="23000" />
       <workItem from="1594465474765" duration="377000" />
-      <workItem from="1594630445698" duration="6160000" />
+      <workItem from="1594630445698" duration="6431000" />
+      <workItem from="1594657900431" duration="336000" />
+      <workItem from="1594759267683" duration="4808000" />
     </task>
     <servers />
   </component>
@@ -266,9 +264,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="659" y="455" key="NewPhpFileDialog" timestamp="1594636084430">
+    <state x="659" y="455" key="NewPhpFileDialog" timestamp="1594762802512">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="659" y="455" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1594636084430" />
+    <state x="659" y="455" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1594762802512" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1594762762975">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1594762762975" />
   </component>
 </project>
