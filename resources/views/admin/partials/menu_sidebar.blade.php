@@ -64,8 +64,18 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.roles') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-folder"></i>
             <span>Roles</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.add.crop') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Crop</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.add.waste') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Waste</span></a>
     </li>
 
     <hr class="sidebar-divider my-0">

@@ -12,7 +12,7 @@
                                 @include('flash._notify')
                                 <h3 class="login-heading mb-3">Forgot Password!</h3>
                                 <h3 class="small login-heading mb-4">You will be sent an email for password reset.</h3>
-                                <form method="post" action="{{ route('user.password.reset.post') }}">
+                                <form method="post" action="{{ route('user.reset.post') }}">
                                     @csrf
                                     <div class="form-label-group">
                                         <input type="email" id="inputEmail"

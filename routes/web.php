@@ -105,9 +105,22 @@ Route::prefix('admin')->group(function (){
 
     //=========== Admin Notification
     Route::get('mark-as-read','AdminController@markAsRead')->name('admin.notification.read');
+
+    //====== Roles =========
     Route::get('roles','AdminController@roles')->name('admin.roles');
     Route::post('role','AdminController@role')->name('admin.roles.submit');
     Route::get('role/{role}','AdminController@roleDelete')->name('admin.roles.delete');
+
+
+    //============== Waste ============
+    Route::get('waste-management','AdminController@addWaste')->name('admin.add.waste');
+    Route::post('waste-management','AdminController@postWaste')->name('admin.post.waste');
+    Route::get('waste-management/{waste}','AdminController@wasteDelete')->name('admin.delete.waste');
+
+    //============= Crop ============
+    Route::get('crop','AdminController@addCrop')->name('admin.add.crop');
+    Route::post('crop','AdminController@postCrop')->name('admin.post.crop');
+    Route::get('delete-crop/{crop}','AdminController@cropDelete')->name('admin.delete.crop');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

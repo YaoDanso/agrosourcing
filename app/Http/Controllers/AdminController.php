@@ -11,6 +11,7 @@ use App\Region;
 use App\Role;
 use App\User;
 use App\Warehouse;
+use App\Waste;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
@@ -227,5 +228,43 @@ class AdminController extends Controller
     public function roleDelete(Role $role){
         $role->delete();
         return redirect()->route('admin.roles')->with('success','Role deleted successfully');
+    }
+
+    // ====== Handle waste ======
+    public function addWaste(){
+        $wastes = Waste::all();
+        $crops = Crop::all();
+        return view('admin.waste.add',compact('wastes','crops'));
+    }
+
+    public function postWaste(Request $request){
+        Waste::create([
+            'name' => $request->waste,
+            'crop_id' => $request->crop
+        ]);
+        return redirect()->route('admin.add.waste')->with('success','New waste added successfully!');
+    }
+
+    public function wasteDelete(Waste $waste){
+        $waste->delete();
+        return redirect()->route('admin.add.waste')->with('success','Waste deleted successfully');
+    }
+
+    //========== Handle Crop ===========
+    public function addCrop(){
+        $crops = Crop::all();
+        return view('admin.crop.add',compact('crops'));
+    }
+
+    public function postCrop(Request $request){
+        Crop::create([
+           'name' => $request->crop
+        ]);
+        return redirect()->route('admin.add.crop')->with('success','Crop added successfully');
+    }
+
+    public function cropDelete(Crop $crop){
+        $crop->delete();
+        return redirect()->route('admin.add.crop')->with('success','Crop deleted successfully');
     }
 }

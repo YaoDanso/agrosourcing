@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/role.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/crop/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/waste/add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/authentication.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/_footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/_nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/partners.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/partners.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/what_we_offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/what_we_offer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,23 +162,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/crop" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/website" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/crop" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/waste" />
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/resources/views/website" />
       <recent name="$PROJECT_DIR$/resources/views/website/partials" />
-      <recent name="$PROJECT_DIR$/public/web" />
-      <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/website" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -244,7 +230,8 @@
       <workItem from="1594465474765" duration="377000" />
       <workItem from="1594630445698" duration="6431000" />
       <workItem from="1594657900431" duration="336000" />
-      <workItem from="1594759267683" duration="4808000" />
+      <workItem from="1594759267683" duration="4979000" />
+      <workItem from="1594850473376" duration="2854000" />
     </task>
     <servers />
   </component>
@@ -268,9 +255,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="659" y="455" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1594762802512" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1594762762975">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1594853257007">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1594762762975" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1594853257007" />
   </component>
 </project>
