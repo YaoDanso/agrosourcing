@@ -23,6 +23,8 @@ class CreateFarmsTable extends Migration
             $table->string('price');
             $table->string('image');
             $table->integer('region_id')->unsigned();
+            $table->integer('organic')->default(0);
+            $table->integer('visible')->default(0);
             $table->timestamps();
 
             $table->foreign('crop_id')

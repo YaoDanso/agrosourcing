@@ -31,7 +31,7 @@
                                     </div>
                                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 btn-primary" type="submit">Sign in</button>
                                 </form>
-                                <a class="btn btn-lg btn-info btn-block btn-login btn-primary
+                                <a class="btn btn-lg btn-block btn-login btn-primary
                                      text-uppercase font-weight-bold mb-2" type="submit" href="{{ route('user.register') }}">
                                     Don't have an account? Register here
                                 </a>

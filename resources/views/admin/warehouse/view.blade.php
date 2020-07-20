@@ -21,6 +21,7 @@
                                 <th>latitude</th>
                                 <th>Price</th>
                                 <th>Crop Type</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,6 +36,13 @@
                                         @foreach($warehouse->crops as $crop)
                                             {{ $crop->name }}
                                         @endforeach
+                                    </td>
+                                    <td>
+                                        @if($warehouse->visible == 1)
+                                            <a class="btn btn-danger" href="{{ route('admin.hide.warehouse',$warehouse->id) }}"><i class="fa fa-thumbs-down"></i> Hide Project</a>
+                                        @elseif($warehouse->visible == 0)
+                                            <a class="btn btn-success" href="{{ route('admin.show.warehouse',$warehouse->id) }}"><i class="fa fa-thumbs-up"></i> Show Project</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

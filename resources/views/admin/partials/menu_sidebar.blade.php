@@ -78,6 +78,19 @@
             <span>Waste</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTruck" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Trucks</span>
+        </a>
+        <div id="collapseTruck" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('trucks.index') }}">Add Truck</a>
+                <a class="collapse-item" href="">Manage Truckers</a>
+            </div>
+        </div>
+    </li>
+
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Tables -->
     <li class="nav-item">

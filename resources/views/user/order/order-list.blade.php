@@ -78,7 +78,7 @@
                             <div class="card shadow-sm">
                                 <img class="card-img-top" src="{{ asset('img/products/'.$product->image) }}" alt="product image" height="200px">
                                 <div class="card-body">
-                                    <h5 class="card-title"><i class="fa fa-dot-circle text-info"></i> Product</h5>
+                                    <h5 class="card-title"><i class="fa fa-dot-circle text-info"></i> Processing Company</h5>
                                     <h6 class="card-text">{{$product->name}}</h6>
                                     <p class="card-text">Company: {{ $product->business }}</p>
                                     <p class="card-text">{{ $product->region->name }} Region</p>

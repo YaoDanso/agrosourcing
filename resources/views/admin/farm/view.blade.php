@@ -22,6 +22,8 @@
                                 <th>region</th>
                                 <th>Crop</th>
                                 <th>Wastes</th>
+                                <th>Organic</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -37,6 +39,20 @@
                                         @foreach($farm->crop->wastes as $waste)
                                             <p>{{$waste->name}}</p>
                                         @endforeach
+                                    </td>
+                                    <td>
+                                        @if($farm->organic == 1)
+                                            <p class="text-success">Yes</p>
+                                        @else
+                                            <p class="text-danger">No</p>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($farm->visible == 1)
+                                            <a class="btn btn-danger" href="{{ route('admin.hide.farm',$farm->id) }}"><i class="fa fa-thumbs-down"></i> Hide Project</a>
+                                        @elseif($farm->visible == 0)
+                                            <a class="btn btn-success" href="{{ route('admin.show.farm',$farm->id) }}"><i class="fa fa-thumbs-up"></i> Show Project</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

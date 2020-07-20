@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->text('wastes');
             $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('visible')->default(0);
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('region_id')->references('id')->on('regions');

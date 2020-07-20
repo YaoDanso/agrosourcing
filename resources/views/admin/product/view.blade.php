@@ -25,6 +25,7 @@
                                 <th>Materials</th>
                                 <th>Business</th>
                                 <th>Wastes</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,6 +41,13 @@
                                     <td>{{ $product->materials }}</td>
                                     <td>{{ $product->business }}</td>
                                     <td>{{ $product->wastes }}</td>
+                                    <td>
+                                        @if($product->visible == 1)
+                                            <a class="btn btn-danger" href="{{ route('admin.hide.product',$product->id) }}"><i class="fa fa-thumbs-down"></i> Hide Project</a>
+                                        @elseif($product->visible == 0)
+                                            <a class="btn btn-success" href="{{ route('admin.show.product',$product->id) }}"><i class="fa fa-thumbs-up"></i> Show Project</a>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

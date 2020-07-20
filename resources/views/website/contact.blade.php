@@ -1,14 +1,13 @@
 @extends('website.website-master')
 @section('web-content')
     <main class="pt-5">
-        <section class="section-pagetop bg-secondary p-5">
+        <section class="section-pagetop bg-bread p-5">
             <div class="container">
                 <div class="m-auto">
                     <h2 class="font-weight-light text-white mt-5">Contact Us</h2>
                 </div>
             </div>
         </section>
-
         <section class="py-5 mt-5">
             <div class="container">
                 <h2 class="font-weight-light mb-5 text-heading">Get In touch with us</h2>

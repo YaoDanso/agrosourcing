@@ -89,14 +89,20 @@ Route::prefix('admin')->group(function (){
     Route::get('/add-product', 'AdminController@addProduct')->name('admin.add.product');
     Route::post('/add-product', 'AdminController@storeProduct')->name('admin.store.product');
     Route::get('/view-products', 'AdminController@viewProduct')->name('admin.view.product');
+    Route::get('/show-products/{product}', 'AdminController@showProduct')->name('admin.show.product');
+    Route::get('/hide-products/{product}', 'AdminController@hideProduct')->name('admin.hide.product');
     //======== Warehouse =======
     Route::get('/add-warehouse', 'AdminController@addWarehouse')->name('admin.add.warehouse');
     Route::post('/add-warehouse', 'AdminController@storeWarehouse')->name('admin.store.warehouse');
     Route::get('/view-warehouse', 'AdminController@viewWarehouse')->name('admin.view.warehouse');
+    Route::get('/show-warehouse/{warehouse}', 'AdminController@showWarehouse')->name('admin.show.warehouse');
+    Route::get('/hide-warehouse/{warehouse}', 'AdminController@hideWarehouse')->name('admin.hide.warehouse');
     //======== Farm =======
     Route::get('/add-farm', 'AdminController@addFarm')->name('admin.add.farm');
     Route::post('/add-farm', 'AdminController@storeFarm')->name('admin.store.farm');
     Route::get('/view-farm', 'AdminController@viewFarm')->name('admin.view.farm');
+    Route::get('/show-farm/{farm}', 'AdminController@showFarm')->name('admin.show.farm');
+    Route::get('/hide-farm/{farm}', 'AdminController@hideFarm')->name('admin.hide.farm');
 
     //========== Users============
     Route::get('/users', 'AdminController@viewUsers')->name('admin.view.users');
@@ -121,6 +127,10 @@ Route::prefix('admin')->group(function (){
     Route::get('crop','AdminController@addCrop')->name('admin.add.crop');
     Route::post('crop','AdminController@postCrop')->name('admin.post.crop');
     Route::get('delete-crop/{crop}','AdminController@cropDelete')->name('admin.delete.crop');
+
+    //=========== Truck =========
+    Route::resource('trucks','TruckController');
+    Route::get('delete-truck/{truck}','Truckcontroller@deleteTruck')->name('admin.truck.delete');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

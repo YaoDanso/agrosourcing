@@ -109,6 +109,20 @@ class AdminController extends Controller
             ->with('success','Farm added successfully!');
     }
 
+    public function showFarm(Farm $farm){
+        $farm->visible = 1;
+        $farm->save();
+        return redirect()->route('admin.view.farm')
+            ->with('success','Farm successfully updated!');
+    }
+
+    public function hideFarm(Farm $farm){
+        $farm->visible = 0;
+        $farm->save();
+        return redirect()->route('admin.view.farm')
+            ->with('success','Farm successfully updated!');
+    }
+
     public function storeWarehouse(Request $request)
     {
         $this->validate($request,[
@@ -266,5 +280,33 @@ class AdminController extends Controller
     public function cropDelete(Crop $crop){
         $crop->delete();
         return redirect()->route('admin.add.crop')->with('success','Crop deleted successfully');
+    }
+
+    public function showWarehouse(Warehouse $warehouse){
+        $warehouse->visible = 1;
+        $warehouse->save();
+        return redirect()->route('admin.view.warehouse')
+            ->with('success','Warehouse successfully updated!');
+    }
+
+    public function hideWarehouse(Warehouse $warehouse){
+        $warehouse->visible = 0;
+        $warehouse->save();
+        return redirect()->route('admin.view.warehouse')
+            ->with('success','Warehouse successfully updated!');
+    }
+
+    public function showProduct(Product $product){
+        $product->visible = 1;
+        $product->save();
+        return redirect()->route('admin.view.product')
+            ->with('success','Product successfully updated!');
+    }
+
+    public function hideProduct(Product $product){
+        $product->visible = 0;
+        $product->save();
+        return redirect()->route('admin.view.product')
+            ->with('success','Product successfully updated!');
     }
 }

@@ -1,4 +1,7 @@
 @extends('user.master')
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
+@endsection
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -69,6 +72,15 @@
                         @endforeach
                     </select>
                 </div>
+
+                <div class="form-group mt-4 mb-4">
+                    <p>Enable this if farm is organic</p>
+                    <label class="switch">
+                        <input type="checkbox" name="organic">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Add Farm Details <i class="fa fa-arrow-right"></i></button>
                 </div>

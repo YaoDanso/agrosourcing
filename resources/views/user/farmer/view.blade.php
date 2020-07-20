@@ -22,6 +22,7 @@
                                 <th>region</th>
                                 <th>Crop</th>
                                 <th>Wastes</th>
+                                <th>Organic</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -37,6 +38,13 @@
                                         @foreach($farm->crop->wastes as $waste)
                                             <p>{{$waste->name}}</p>
                                         @endforeach
+                                    </td>
+                                    <td>
+                                        @if($farm->organic == 1)
+                                            <p class="text-success">Yes</p>
+                                        @else
+                                            <p class="text-danger">No</p>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

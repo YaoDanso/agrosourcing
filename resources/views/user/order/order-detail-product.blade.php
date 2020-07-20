@@ -6,7 +6,7 @@
     </div>
 
     <div class="shadow mb-4 p-4">
-        <h3 class="font-weight-light p-3">Product Details</h3>
+        <h3 class="font-weight-light p-3">Processing Company Details</h3>
         <div class="row">
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <img class="card-img-top" src="{{ asset('img/products/'.$product->image) }}" alt="farm image" height="400px">
