@@ -77,6 +77,12 @@ Route::prefix('user')->group(function (){
 
     Route::get('/mark-as-read', 'HomeController@markAsRead')->name('user.mark.notify');
     Route::get('/notifications', 'HomeController@notifications')->name('user.notifications');
+
+
+    //============= Truckers ============
+    Route::get('/create-trucker', 'TruckerController@create')->name('user.add.trucker');
+    Route::get('/view-truckers', 'TruckerController@index')->name('user.view.trucker');
+    Route::post('/create-trucker', 'TruckerController@store')->name('user.store.trucker');
 });
 
 Route::prefix('admin')->group(function (){
@@ -108,6 +114,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/users', 'AdminController@viewUsers')->name('admin.view.users');
     Route::get('/suspend-user/{id}', 'AdminController@suspendUser')->name('admin.suspend.user');
     Route::get('/unsuspend-user/{id}', 'AdminController@unsuspendUser')->name('admin.unsuspend.user');
+    Route::get('/approve-user/{id}', 'AdminController@approveUser')->name('admin.approve.user');
 
     //=========== Admin Notification
     Route::get('mark-as-read','AdminController@markAsRead')->name('admin.notification.read');
@@ -131,6 +138,7 @@ Route::prefix('admin')->group(function (){
     //=========== Truck =========
     Route::resource('trucks','TruckController');
     Route::get('delete-truck/{truck}','Truckcontroller@deleteTruck')->name('admin.truck.delete');
+    Route::get('view-truckers','AdminController@viewTruckers')->name('admin.trucker.view');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

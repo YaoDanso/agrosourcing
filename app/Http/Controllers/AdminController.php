@@ -9,6 +9,7 @@ use App\Order;
 use App\Product;
 use App\Region;
 use App\Role;
+use App\Trucker;
 use App\User;
 use App\Warehouse;
 use App\Waste;
@@ -201,7 +202,7 @@ class AdminController extends Controller
         User::where('id',$id)
             ->update(['status' => 0]);
         //sending notification
-        $message = "You suspended an administrator";
+        $message = "You suspended a user";
         //database Notification
         Notification::send(auth()->user(),new AdminNotification($message));
         return redirect()->route('admin.view.users')
@@ -211,12 +212,23 @@ class AdminController extends Controller
         User::where('id',$id)
             ->update(['status' => 1]);
         //sending notification
-        $message = "You unsuspended an administrator";
+        $message = "You unsuspended a user";
 
         //database Notification
         Notification::send(auth()->user(),new AdminNotification($message));
         return redirect()->route('admin.view.users')
             ->with('success','User Unsuspended successfully!');
+    }
+    public function approveUser($id){
+        User::where('id',$id)
+            ->update(['status' => 1]);
+        //sending notification
+        $message = "You approved a user";
+
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
+        return redirect()->route('admin.view.users')
+            ->with('success','User approved successfully!');
     }
 
     public function markAsRead(){
@@ -308,5 +320,10 @@ class AdminController extends Controller
         $product->save();
         return redirect()->route('admin.view.product')
             ->with('success','Product successfully updated!');
+    }
+
+    public function viewTruckers(){
+        $truckers = Trucker::all();
+        return view('admin.truck.view-tracker',compact('truckers'));
     }
 }

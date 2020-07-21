@@ -86,9 +86,15 @@
         <div id="collapseTruck" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('trucks.index') }}">Add Truck</a>
-                <a class="collapse-item" href="">Manage Truckers</a>
+                <a class="collapse-item" href="{{ route('admin.trucker.view') }}">Manage Truckers</a>
             </div>
         </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="">
+            <i class="fas fa-fw fa-boxes"></i>
+            <span>Orders</span></a>
     </li>
 
     <hr class="sidebar-divider my-0">

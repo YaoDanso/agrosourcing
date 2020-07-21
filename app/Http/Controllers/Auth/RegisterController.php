@@ -130,11 +130,12 @@ class RegisterController extends Controller
         }
         User::where('uuid',$user->uuid)
             ->update([
-                'email_verified'=> 1,
-                'verified_token' => ''
+                    'email_verified'=> 1,
+                    'verified_token' => '',
+                    'status' => 2
                 ]);
 
         return redirect()->intended(route('user.login'))
-            ->with('success','Your account was activated successfully, You can login.');
+            ->with('success','Your account was activated successfully, Waiting for admin to approve you!');
     }
 }

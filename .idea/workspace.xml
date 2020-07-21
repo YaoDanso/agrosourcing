@@ -2,34 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/slider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/truck/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/truck/view-tracker.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/trucker/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/trucker/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FarmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FarmController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_213223_create_farms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_213223_create_farms_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_12_155101_create_warehouses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_12_155101_create_warehouses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_12_171338_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_12_171338_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/farm/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/farm/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TruckerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TruckerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Trucker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trucker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_20_183717_create_truckers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_20_183717_create_truckers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/warehouse/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/warehouse/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/farmer/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/farmer/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/farmer/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/order-detail-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/order-detail-product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/order-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/order-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/order/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partials/_nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/research.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/research.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/sourcemap.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/upcycling.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,23 +158,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/crop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/truck" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/crop" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/waste" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/resources/views/website" />
-      <recent name="$PROJECT_DIR$/resources/views/website/partials" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/website" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/truck" />
+      <recent name="$PROJECT_DIR$/resources/views/user/trucker" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/crop" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/waste" />
+      <recent name="$PROJECT_DIR$/public/img" />
     </key>
   </component>
   <component name="RunManager">
@@ -240,7 +228,7 @@
       <workItem from="1594657900431" duration="336000" />
       <workItem from="1594759267683" duration="4979000" />
       <workItem from="1594850473376" duration="2924000" />
-      <workItem from="1595263906159" duration="7300000" />
+      <workItem from="1595263906159" duration="11983000" />
     </task>
     <servers />
   </component>
@@ -264,9 +252,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="659" y="455" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595270590610" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595271315428">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595320804969">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595271315428" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595320804969" />
   </component>
 </project>

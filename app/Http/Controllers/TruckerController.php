@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Region;
+use App\Truck;
 use App\Trucker;
 use Illuminate\Http\Request;
 
@@ -10,39 +12,53 @@ class TruckerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $truckers = Trucker::where('user_id',auth()->user()->id)->get();
+        return view('user.trucker.view',compact('truckers'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $regions = Region::all();
+        $trucks = Truck::all();
+        return view('user.trucker.create',compact('regions','trucks'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+           'type' => 'required',
+           'capacity' => 'required',
+           'location' => 'required',
+           'region' => 'required',
+        ]);
+
+        Trucker::create([
+           'truck_id' => $request->type,
+           'capacity' => $request->capacity,
+           'location' => $request->location,
+           'region_id' => $request->region,
+           'user_id' => auth()->user()->id
+        ]);
+
+        return redirect()->route('user.view.trucker')->with('success','Truck added successfully!');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Trucker  $trucker
-     * @return \Illuminate\Http\Response
      */
     public function show(Trucker $trucker)
     {
@@ -53,7 +69,6 @@ class TruckerController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Trucker  $trucker
-     * @return \Illuminate\Http\Response
      */
     public function edit(Trucker $trucker)
     {

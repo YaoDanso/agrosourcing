@@ -48,7 +48,7 @@
         @elseif($role->id == 2)
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFunding" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-money-bill"></i>
+                    <i class="fas fa-fw fa-box-open"></i>
                     <span>Product</span>
                 </a>
                 <div id="collapseFunding" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -61,13 +61,26 @@
         @elseif($role->id == 3)
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAggregator" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-money-bill"></i>
+                    <i class="fas fa-fw fa-building"></i>
                     <span>Aggregator</span>
                 </a>
                 <div id="collapseAggregator" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('user.add.warehouse') }}">Add Warehouse</a>
                         <a class="collapse-item" href="{{ route('user.view.warehouse') }}">View Warehouse</a>
+                    </div>
+                </div>
+            </li>
+        @elseif($role->id == 4)
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTrucker" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-car"></i>
+                    <span>Trucker</span>
+                </a>
+                <div id="collapseTrucker" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('user.add.trucker') }}">Add Truck</a>
+                        <a class="collapse-item" href="{{ route('user.view.trucker') }}">View Trucks</a>
                     </div>
                 </div>
             </li>

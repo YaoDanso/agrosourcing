@@ -15,10 +15,16 @@ class CreateTruckersTable extends Migration
     {
         Schema::create('truckers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type')->unsigned();
+            $table->integer('truck_id')->unsigned();
             $table->string('capacity');
-            $table->integer('region')->unsigned();
-            $table->integer('location')->nullable();
+            $table->integer('region_id')->unsigned();
+            $table->string('location')->nullable();
+            $table->integer('user_id')->unsigned();
+
+            $table->foreign('truck_id')->references('id')->on('trucks');
+            $table->foreign('region_id')->references('id')->on('regions');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
