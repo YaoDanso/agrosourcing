@@ -6,6 +6,7 @@ use App\Crop;
 use App\Farm;
 use App\Notifications\AdminNotification;
 use App\Order;
+use App\OrderDetail;
 use App\Product;
 use App\Region;
 use App\Role;
@@ -325,5 +326,26 @@ class AdminController extends Controller
     public function viewTruckers(){
         $truckers = Trucker::all();
         return view('admin.truck.view-tracker',compact('truckers'));
+    }
+
+    public function orders(){
+        $orders = Order::all();
+        return view('admin.orders.view-orders',compact('orders'));
+    }
+
+    public function orderDetail($order_id,$code){
+        $order = Order::where('id',$order_id)->first();
+        $order_details = OrderDetail::where('order_id',$order_id)->get();
+        return view('admin.orders.view-order-detail',compact('order','order_details'));
+    }
+
+    public function confirmOrder($id){
+        Order::where('id',$id)->update(['status' => 2]);
+        return redirect()->route('admin.orders.view')->with('success','Order successfully confirmed!');
+    }
+
+    public function declineOrder($id){
+        Order::where('id',$id)->update(['status' => 3]);
+        return redirect()->route('admin.orders.view')->with('success','Order successfully declined!');
     }
 }

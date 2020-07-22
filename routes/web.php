@@ -139,6 +139,12 @@ Route::prefix('admin')->group(function (){
     Route::resource('trucks','TruckController');
     Route::get('delete-truck/{truck}','Truckcontroller@deleteTruck')->name('admin.truck.delete');
     Route::get('view-truckers','AdminController@viewTruckers')->name('admin.trucker.view');
+
+    //========= Orders ==========
+    Route::get('orders','AdminController@orders')->name('admin.orders.view');
+    Route::get('orders/{order_id}/detail/{code}','AdminController@orderDetail')->name('admin.orders.detail');
+    Route::get('confirm-order/{order}','AdminController@confirmOrder')->name('admin.orders.confirm');
+    Route::get('decline-order/{order}','AdminController@declineOrder')->name('admin.orders.decline');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

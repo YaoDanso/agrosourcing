@@ -92,7 +92,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('admin.orders.view') }}">
             <i class="fas fa-fw fa-boxes"></i>
             <span>Orders</span></a>
     </li>
