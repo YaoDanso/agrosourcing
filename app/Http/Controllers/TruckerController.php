@@ -49,6 +49,7 @@ class TruckerController extends Controller
            'capacity' => $request->capacity,
            'location' => $request->location,
            'region_id' => $request->region,
+           'unit' => $request->unit,
            'user_id' => auth()->user()->id
         ]);
 

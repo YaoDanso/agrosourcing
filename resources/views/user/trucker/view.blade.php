@@ -18,6 +18,7 @@
                                 <th>Created On</th>
                                 <th>Truck</th>
                                 <th>Capacity</th>
+                                <th>Unit</th>
                                 <th>Region</th>
                                 <th>Location</th>
                             </tr>
@@ -28,6 +29,7 @@
                                     <td>{{ \Carbon\Carbon::parse($trucker->created_at)->format('dS M Y') }}</td>
                                     <td>{{ $trucker->truck->name }}</td>
                                     <td>{{ $trucker->capacity }}</td>
+                                    <td>{{ $trucker->unit }}</td>
                                     <td>{{ $trucker->region->name }}</td>
                                     <td>{{ $trucker->location }}</td>
                                 </tr>

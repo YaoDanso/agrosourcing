@@ -139,7 +139,7 @@ class HomeController extends Controller
                 'attributes' => array(
                     'crop' => $product->materials,
                     'image' => $product->image,
-                    'type' => 'product'
+                    'type' => 'processing company'
                 )
             ));
             return response(array(

@@ -20,6 +20,7 @@ class CreateTruckersTable extends Migration
             $table->integer('region_id')->unsigned();
             $table->string('location')->nullable();
             $table->integer('user_id')->unsigned();
+            $table->string('unit');
 
             $table->foreign('truck_id')->references('id')->on('trucks');
             $table->foreign('region_id')->references('id')->on('regions');

@@ -17,18 +17,17 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="truck">Type*</label>
-                            <select class="form-control" name="type" id="truck">
-                                @foreach($trucks as $truck)
-                                    <option value="{{$truck->id}}">{{ $truck->name }}</option>
-                                @endforeach
-                            </select>
+                            <label for="">Capacity*</label>
+                            <input type="number" class="form-control" name="capacity" value="{{ old('capacity') }}" required>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="">Capacity*</label>
-                            <input type="text" class="form-control" name="capacity" value="{{ old('capacity') }}" required>
+                            <label for="unit">Unit*</label>
+                            <select name="unit" id="unit" class="form-control">
+                                <option value="Tons">Tons</option>
+                                <option value="Cubic Feet">Cubic Feet</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -45,10 +44,18 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="location">Location*</label>
-                            <input type="text" name="location" class="form-control" value="{{ old('location') }}" id="location" required>
+                            <label for="truck">Type*</label>
+                            <select class="form-control" name="type" id="truck">
+                                @foreach($trucks as $truck)
+                                    <option value="{{$truck->id}}">{{ $truck->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location*</label>
+                    <input type="text" name="location" class="form-control" value="{{ old('location') }}" id="location" required>
                 </div>
 
                 <div class="form-group">

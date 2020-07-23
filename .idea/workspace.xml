@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/view-order-detail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/view-orders.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_26_183927_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_27_183927_create_payments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TruckerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TruckerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Trucker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trucker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_20_183717_create_truckers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_20_183717_create_truckers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/trucker/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/trucker/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/trucker/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/trucker/view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,6 +220,7 @@
       <workItem from="1594850473376" duration="2924000" />
       <workItem from="1595263906159" duration="11983000" />
       <workItem from="1595438037211" duration="6496000" />
+      <workItem from="1595502378165" duration="1380000" />
     </task>
     <servers />
   </component>
@@ -245,9 +244,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="659" y="455" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595270590610" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595448571121">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595503563561">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595448571121" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595503563561" />
   </component>
 </project>

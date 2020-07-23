@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trucker extends Model
 {
-    protected $fillable = ['capacity','truck_id','user_id','region_id','location'];
+    protected $fillable = ['capacity','truck_id','user_id','region_id','location','unit'];
 
     public function region(){
         return $this->belongsTo(Region::class);
