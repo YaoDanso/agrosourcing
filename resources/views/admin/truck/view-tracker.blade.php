@@ -8,7 +8,7 @@
     <div class="card shadow mb-4 p-4">
         <div class="card-body">
             @include('flash._notify')
-            <div class="card shadow mb-4">
+            <div class="card mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Manage All Truckers</h6>
                 </div>
@@ -17,6 +17,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Created On</th>
                                 <th>Truck</th>
                                 <th>Capacity</th>
@@ -28,6 +29,7 @@
                             <tbody>
                             @foreach($truckers as $trucker)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ \Carbon\Carbon::parse($trucker->created_at)->format('dS M Y') }}</td>
                                     <td>{{ $trucker->truck->name }}</td>
                                     <td>{{ $trucker->capacity }}</td>

@@ -29,8 +29,8 @@
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFunding" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-money-bill"></i>
-            <span>Product</span>
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Processing Company</span>
         </a>
         <div id="collapseFunding" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -41,7 +41,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAggregator" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-money-bill"></i>
+            <i class="fas fa-fw fa-folder"></i>
             <span>Aggregator</span>
         </a>
         <div id="collapseAggregator" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -59,6 +59,7 @@
         <div id="collapseUsers" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.view.users') }}">View Users</a>
+                <a class="collapse-item" href="{{ route('admin.view.information') }}">Information System</a>
             </div>
         </div>
     </li>

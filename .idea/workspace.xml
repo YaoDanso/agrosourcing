@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/information.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TruckerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TruckerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Trucker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trucker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_20_183717_create_truckers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_20_183717_create_truckers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/trucker/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/trucker/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/trucker/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/trucker/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/crop/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/crop/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/farm/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/farm/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/orders/view-orders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/orders/view-orders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/menu_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/roles/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/roles/role.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/truck/view-tracker.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/truck/view-tracker.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/warehouse/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/warehouse/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,23 +154,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/orders" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/user" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/website" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/user" />
       <recent name="$PROJECT_DIR$/resources/views/admin/orders" />
       <recent name="$PROJECT_DIR$/resources/views/admin/truck" />
       <recent name="$PROJECT_DIR$/resources/views/user/trucker" />
       <recent name="$PROJECT_DIR$/resources/views/admin/crop" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/waste" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/website" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -221,6 +227,7 @@
       <workItem from="1595263906159" duration="11983000" />
       <workItem from="1595438037211" duration="6496000" />
       <workItem from="1595502378165" duration="1380000" />
+      <workItem from="1595677071964" duration="4415000" />
     </task>
     <servers />
   </component>
@@ -240,13 +247,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595759529690">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595759529690" />
     <state x="659" y="455" key="NewPhpFileDialog" timestamp="1595270590610">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="659" y="455" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595270590610" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595503563561">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595759503520">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595503563561" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595759503520" />
   </component>
 </project>

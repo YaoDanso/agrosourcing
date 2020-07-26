@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Crop;
 use App\Farm;
 use App\Notifications\AdminNotification;
+use App\Notifications\UserNotification;
 use App\Order;
 use App\OrderDetail;
 use App\Product;
@@ -15,6 +16,7 @@ use App\User;
 use App\Warehouse;
 use App\Waste;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
@@ -47,7 +49,8 @@ class AdminController extends Controller
     public function addProduct(){
         $crops = Crop::all();
         $regions = Region::all();
-        return view('admin.product.create',compact('crops','regions'));
+        $users = User::all();
+        return view('admin.product.create',compact('crops','regions','users'));
     }
     public function viewProduct(){
         $products = Product::all();
@@ -57,7 +60,8 @@ class AdminController extends Controller
     public function addWarehouse(){
         $crops = Crop::all();
         $regions = Region::all();
-        return view('admin.warehouse.create',compact('crops','regions'));
+        $users = User::all();
+        return view('admin.warehouse.create',compact('crops','regions','users'));
     }
 
     public function viewWarehouse(){
@@ -68,7 +72,8 @@ class AdminController extends Controller
     public function addFarm(){
         $crops = Crop::all();
         $regions = Region::all();
-        return view('admin.farm.create',compact('crops','regions'));
+        $users = User::all();
+        return view('admin.farm.create',compact('crops','regions','users'));
     }
 
     public function viewFarm(){
@@ -93,6 +98,7 @@ class AdminController extends Controller
         $farm->crop_id = $request->crop;
         $farm->price = $request->price;
         $farm->region_id = $request->region;
+        $farm->user_id = $request->user_id;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');
@@ -140,6 +146,7 @@ class AdminController extends Controller
         $warehouse->longitude = $request->longitude;
         $warehouse->latitude = $request->latitude;
         $warehouse->price = $request->price;
+        $warehouse->user_id = $request->user_id;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');
@@ -182,7 +189,8 @@ class AdminController extends Controller
                 'longitude' => $request->longitude,
                 'latitude' => $request->latitude,
                 'wastes' => $request->wastes,
-                'image' => $new_name
+                'image' => $new_name,
+                'user_id' => $request->user_id
             ]);
             //sending notification
             $message = "You added a new product!";
@@ -340,12 +348,44 @@ class AdminController extends Controller
     }
 
     public function confirmOrder($id){
-        Order::where('id',$id)->update(['status' => 2]);
+        $order = Order::where('id',$id)->first();
+        $order->update(['status' => 2]);
+
+        $new_user = User::where('id',$order->user_id)->first();
+
+        //sending notification
+        $message = "You confirmed an order";
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
+
+
+        $title = "Order";
+        $message = "Your order has been confirmed!";
+        Notification::send($new_user,new UserNotification($title,$message));
+
         return redirect()->route('admin.orders.view')->with('success','Order successfully confirmed!');
     }
 
     public function declineOrder($id){
-        Order::where('id',$id)->update(['status' => 3]);
+        $order = Order::where('id',$id)->first();
+        $order->update(['status' => 3]);
+
+        $new_user = User::where('id',$order->user_id)->first();
+
+        $message = "You declined an order";
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
+
+
+        $title = "Order";
+        $message = "Your order has been confirmed!";
+        Notification::send($new_user,new UserNotification($title,$message));
+
         return redirect()->route('admin.orders.view')->with('success','Order successfully declined!');
+    }
+
+    public function informationSystem(){
+        $data = User::all();
+        return view('admin.user.information',compact('data'));
     }
 }

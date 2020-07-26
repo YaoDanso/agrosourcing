@@ -69,6 +69,14 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="">Select User*</label>
+                    <select name="user_id" class="form-control">
+                        @foreach($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <button class="btn btn-primary" type="submit">
                         <i class="fa fa-plus"></i> Add Warehouse
                     </button>

@@ -112,6 +112,7 @@ Route::prefix('admin')->group(function (){
 
     //========== Users============
     Route::get('/users', 'AdminController@viewUsers')->name('admin.view.users');
+    Route::get('/information-system', 'AdminController@informationSystem')->name('admin.view.information');
     Route::get('/suspend-user/{id}', 'AdminController@suspendUser')->name('admin.suspend.user');
     Route::get('/unsuspend-user/{id}', 'AdminController@unsuspendUser')->name('admin.unsuspend.user');
     Route::get('/approve-user/{id}', 'AdminController@approveUser')->name('admin.approve.user');

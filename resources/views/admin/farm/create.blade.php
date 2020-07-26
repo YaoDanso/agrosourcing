@@ -61,14 +61,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Select Region*</label>
-                    <select name="region" class="form-control">
-                        @foreach($regions as $region)
-                            <option value="{{ $region->id }}">{{ $region->name }}</option>
-                        @endforeach
-                    </select>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="">Select Region*</label>
+                            <select name="region" class="form-control">
+                                @foreach($regions as $region)
+                                    <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="">Select User*</label>
+                            <select name="user_id" class="form-control">
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Add Farm Details <i class="fa fa-arrow-right"></i></button>
                 </div>

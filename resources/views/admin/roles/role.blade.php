@@ -16,6 +16,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Reg Date</th>
                                 <th>Action</th>
@@ -24,6 +25,7 @@
                             <tbody>
                             @foreach($roles as $role)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $role->name }}</td>
                                     <td>{{ \Carbon\Carbon::parse($role->created_at)->format('dS M Y H:iA') }}</td>
                                     <td>

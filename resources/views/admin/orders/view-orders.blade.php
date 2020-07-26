@@ -17,6 +17,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Date Placed</th>
                                 <th>Customer</th>
                                 <th>Order Code</th>
@@ -28,6 +29,7 @@
                             <tbody>
                             @foreach($orders as $order)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ \Carbon\Carbon::parse($order->created_at)->format('dS M Y') }}</td>
                                     <td>{{ $order->user->name }}</td>
                                     <td>{{ $order->code }}</td>

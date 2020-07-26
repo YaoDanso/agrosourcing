@@ -67,6 +67,16 @@
                             <input type="file" class="form-control" name="image" required>
                         </div>
                     </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="">Select User*</label>
+                            <select name="user_id" class="form-control">
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mt-4">
                     <button class="btn btn-primary btn-block" type="submit">

@@ -16,6 +16,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Reg Date</th>
                                 <th>Action</th>
@@ -24,6 +25,7 @@
                             <tbody>
                             @foreach($crops as $crop)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $crop->name }}</td>
                                     <td>{{ \Carbon\Carbon::parse($crop->created_at)->format('dS M Y H:iA') }}</td>
                                     <td>
