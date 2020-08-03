@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\RegisterMail;
+use App\Notifications\NewUser;
+use App\Notifications\NewUserAdmin;
 use App\Profile;
 use App\Providers\RouteServiceProvider;
 use App\Role;
@@ -85,8 +88,13 @@ class RegisterController extends Controller
             'user_id' => $user->id
         ]);
 
-        Mail::to($user->email)->send(new RegisterMail($token,$user->name));
+        $user->notify(new NewUser($user->name,$token));
 
+        $admins = Admin::all();
+        foreach ($admins as $admin){
+            $admin->notify(new NewUserAdmin());
+        }
+        //Mail::to($user->email)->send(new RegisterMail($token,$user->name));
 
         return redirect()->intended(route('user.login'))
             ->with('success','Your account was created, visit your email to verify your account.');

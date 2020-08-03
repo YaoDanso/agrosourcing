@@ -47,7 +47,7 @@
                     <div class="col-md-8 col-sm-12 col-xs-12 mb-5">
                         @include('flash._notify')
                         <div>
-                            <form method="post">
+                            <form method="post" action="{{ route('web.contact.post') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label>Full Name</label>

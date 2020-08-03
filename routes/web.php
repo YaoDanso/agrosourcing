@@ -19,6 +19,7 @@ Route::get('/sourcemap', 'WebsiteController@sourcemap')->name('web.sourcemap');
 Route::get('/upcycling', 'WebsiteController@upcycling')->name('web.upcycling');
 Route::get('/research', 'WebsiteController@research')->name('web.research');
 Route::get('/contact', 'WebsiteController@contact')->name('web.contact');
+Route::post('/contact', 'WebsiteController@postContact')->name('web.contact.post');
 
 Auth::routes();
 

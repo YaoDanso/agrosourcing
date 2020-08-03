@@ -29,7 +29,7 @@
                                     @elseif($item->attributes->type == 'warehouse')
                                         <img class="img-responsive"
                                              src="{{ asset('img/warehouses/'.$item->attributes->image) }}" alt="prewiew" width="120" height="80">
-                                    @elseif($item->attributes->type == 'product')
+                                    @elseif($item->attributes->type == 'processing company')
                                         <img class="img-responsive"
                                              src="{{ asset('img/products/'.$item->attributes->image) }}" alt="prewiew" width="120" height="80">
                                     @endif

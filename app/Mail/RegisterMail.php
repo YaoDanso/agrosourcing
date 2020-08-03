@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Queue\SerializesModels;
 
 class RegisterMail extends Mailable
@@ -27,10 +28,16 @@ class RegisterMail extends Mailable
     /**
      * Build the message.
      *
-     * @return $this
+     *
      */
     public function build()
     {
-        return $this->view('mail.register')->with(['token'=>$this->token, 'name'=>$this->name]);
+        return (new MailMessage())
+            ->line('New user account activation')
+            ->line('Hello '.$this->name . ',')
+            ->line('You are receiving this email to activate your account.')
+            ->action('Activate account',url('/verify/token/'.$this->token))
+            ->line('Thank you for using our application!');
+         //$this->view('mail.register')->with(['token'=>$this->token, 'name'=>$this->name]);
     }
 }

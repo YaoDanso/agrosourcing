@@ -139,17 +139,6 @@
                     </div>
                     <div class="col-xl-4 col-md-4 col-lg-4 mb-4">
                         <div class="card border-0 shadow">
-                            <img src="{{ asset('web/img/team2.jpg') }}"
-                                 class="card-img-top">
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-0">Joseph Bryden</h5>
-                                <div class="card-text text-black-50 pb-2 text-heading">CHIEF OPERATIONS OFFICER</div>
-                                <p class="lead">Joseph Bryden is a technokrat from the Kwame Nkrumah University of Science and Technology and majored in Metallurgy. He continued to attain a diploma in Fire Engineering from the Institute of Fire Engineers, UK. Joseph worked with the Ghana National Fire Service for 8 years as a senior officer and left with the rank of Assistant Divisional Officer Grade 1. Joe Bryden is bent on revolutionizing the use and value addition of agro residues that go waste after every harvest period</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-4 col-lg-4 mb-4">
-                        <div class="card border-0 shadow">
                             <img src="{{ asset('web/img/team3.jpeg') }}"
                                  class="card-img-top">
                             <div class="card-body text-center">

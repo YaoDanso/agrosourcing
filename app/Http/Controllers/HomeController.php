@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Admin;
 use App\Farm;
 use App\Notifications\AdminNotification;
+use App\Notifications\OrderNotification;
+use App\Notifications\OrderNotificationAdmin;
 use App\Notifications\UserNotification;
 use App\Order;
 use App\OrderDetail;
@@ -225,11 +227,13 @@ class HomeController extends Controller
         \Cart::clear();
         $title = "Order";
         $message = "You have successfully place an order with code $order_code";
+        \auth()->user()->notify(new OrderNotification($order_code));
         Notification::send(\auth()->user(),new UserNotification($title,$message));
         $admins = Admin::where('level',1)->get();
         $messageAdmin = "You have received an order!";
         foreach ($admins as $admin){
             Notification::send($admin, new AdminNotification($messageAdmin));
+            $admin->notify(new OrderNotificationAdmin($order_code));
         }
         return redirect()->route('user.welcome')
             ->with('success','Your order was successfully placed with code: '.$order_code);
