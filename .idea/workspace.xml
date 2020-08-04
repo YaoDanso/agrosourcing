@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e08ec2-276f-4efc-b2ee-9c9433793860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/profile/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/map/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/map/map.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/farms/1587470804.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/farms/1590528018.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/farms/1595267791.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/farms/farm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/1588012475.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/1590528214.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/1595317791.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/product.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/warehouses/1587471283.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/warehouses/1590528511.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/warehouses/warehouse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/menu_sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +231,9 @@
       <workItem from="1595677071964" duration="4415000" />
       <workItem from="1595771616865" duration="32000" />
       <workItem from="1596485496265" duration="4192000" />
-      <workItem from="1596535161168" duration="867000" />
+      <workItem from="1596535161168" duration="2376000" />
+      <workItem from="1596544999526" duration="25000" />
+      <workItem from="1596547004829" duration="565000" />
     </task>
     <servers />
   </component>
@@ -255,9 +265,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596486984590" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1596536475121">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1596537918507">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596536475121" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596537918507" />
   </component>
 </project>
