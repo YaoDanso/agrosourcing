@@ -261,7 +261,7 @@
                     },
                     properties: {
                         title: "{{ $product->name }}",
-                        description: 'Need to add some description here.',
+                        description: 'Click checkout to add to cart',
                         _id: '{{ $product->id }}',
                         type: 'product',
                     }
@@ -270,7 +270,7 @@
         };
         geojson.push(_geoProd_{{$loop->iteration}});
         @endforeach
-        console.log("YOLO",geojson);
+        //console.log("YOLO",geojson);
         // add markers to map
         geojson.map((feature,index) =>
             feature.features.forEach(function(marker) {

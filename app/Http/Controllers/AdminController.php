@@ -16,7 +16,9 @@ use App\User;
 use App\Warehouse;
 use App\Waste;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 use Intervention\Image\Facades\Image;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
@@ -387,5 +389,34 @@ class AdminController extends Controller
     public function informationSystem(){
         $data = User::all();
         return view('admin.user.information',compact('data'));
+    }
+
+    public function profile(){
+        return view('admin.profile.profile');
+    }
+
+    public function changePassword(Request $request){
+        $this->validate($request, [
+            'old_password'  => 'required|min:7',
+            'password' => 'required|min:6|confirmed'
+        ]);
+
+        $user = Auth::user();
+        $oldPassword = $request->old_password;
+        $newPassword = $request->password;
+
+        if (Hash::check($oldPassword,$user->password)){
+            request()->user()->fill([
+                'password' => Hash::make($newPassword)
+            ])->save();
+            $message = "Your password was changed!";
+            Notification::send(\auth()->user(),new AdminNotification($message));
+            request()->session()->flash('success','password changed successfully');
+
+            return redirect(route('admin.profile'));
+        }else{
+            request()->session()->flash('error','Make sure you enter your right old password!');
+            return redirect(route('admin.profile'));
+        }
     }
 }

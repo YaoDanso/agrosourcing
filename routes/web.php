@@ -147,6 +147,10 @@ Route::prefix('admin')->group(function (){
     Route::get('orders/{order_id}/detail/{code}','AdminController@orderDetail')->name('admin.orders.detail');
     Route::get('confirm-order/{order}','AdminController@confirmOrder')->name('admin.orders.confirm');
     Route::get('decline-order/{order}','AdminController@declineOrder')->name('admin.orders.decline');
+
+    //====== Profile =====
+    Route::get('profile','AdminController@profile')->name('admin.profile');
+    Route::post('change-password','AdminController@changePassword')->name('admin.change.password');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
