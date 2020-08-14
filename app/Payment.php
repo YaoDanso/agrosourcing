@@ -11,6 +11,6 @@ class Payment extends Model
     protected $fillable = ['method','status','order_id'];
 
     public function order(){
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class,'order_id','id','orders');
     }
 }

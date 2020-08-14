@@ -21,18 +21,16 @@ class WarehouseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $warehouses = Warehouse::where('user_id',auth()->id)->get();
+        $warehouses = Warehouse::where('user_id',auth()->user()->id)->get();
         return view('user.aggregator.view_warehouse',compact('warehouses'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -45,7 +43,6 @@ class WarehouseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -93,7 +90,6 @@ class WarehouseController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Warehouse  $warehouse
-     * @return \Illuminate\Http\Response
      */
     public function show(Warehouse $warehouse)
     {

@@ -13,10 +13,53 @@ class RegionSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 16; $i++){
-            DB::table('regions')->insert([
-                'name' => Str::random(10),
-            ]);
-        }
+        DB::table('regions')->insert([
+            'name' => "Oti Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Bono East Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Ahafo Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Bono Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "North East Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Savannah Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Western North Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Western Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Volta Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Greater Accra Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Eastern Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Ashanti Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Central Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Northern Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Upper East Region"
+        ]);
+        DB::table('regions')->insert([
+            'name' => "Upper West Region"
+        ]);
     }
 }

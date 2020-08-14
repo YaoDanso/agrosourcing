@@ -19,9 +19,6 @@ class CreatePaymentsTable extends Migration
             $table->integer('status');
             $table->integer('order_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('order_id')
-                ->on('orders')->references('id');
         });
     }
 

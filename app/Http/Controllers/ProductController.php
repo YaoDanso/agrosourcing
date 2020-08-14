@@ -21,7 +21,6 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -32,7 +31,6 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -45,7 +43,6 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -53,26 +50,27 @@ class ProductController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
+        $product = new Product();
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->materials = $request->materials;
+        $product->business = $request->business;
+        $product->region_id = $request->region;
+        $product->longitude = $request->longitude;
+        $product->latitude = $request->latitude;
+        $product->wastes = $request->wastes;
+        $product->user_id = auth()->user()->id;
+
         if ($request->hasFile('image')){
             $image = $request->file('image');
             $new_name = time() . "." . $image->getClientOriginalExtension();
             $location = public_path('img/products/'.$new_name);
             Image::make($image)->resize(450, 320)->save($location,90);
-
-            Product::create([
-                'name' => $request->name,
-                'description' => $request->description,
-                'price' => $request->price,
-                'materials' => $request->materials,
-                'business' => $request->business,
-                'region_id' => $request->region,
-                'longitude' => $request->longitude,
-                'latitude' => $request->latitude,
-                'wastes' => $request->wastes,
-                'user_id' => auth()->user()->id,
-                'image' => $new_name
-            ]);
+            $product->image = $new_name;
         }
+        $product->save();
+
         $title = "Product";
         $message = "You added a new product successfully!";
         Notification::send(\auth()->user(),new UserNotification($title,$message));
@@ -91,7 +89,6 @@ class ProductController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
      */
     public function show(Product $product)
     {
@@ -102,7 +99,6 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
      */
     public function edit(Product $product)
     {
@@ -114,7 +110,6 @@ class ProductController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product)
     {
@@ -125,7 +120,6 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product)
     {

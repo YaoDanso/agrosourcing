@@ -40,9 +40,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $farms = Farm::all();
-        $products = Product::all();
-        $warehouses = Warehouse::all();
+        $farms = Farm::where('visible',1)->get();
+        $products = Product::where('visible',1)->get();
+        $warehouses = Warehouse::where('visible',1)->get();
         $orders = Order::where('user_id',\auth()->user()->id)->get();
 
         return view('user.dashboard',compact('farms','products','warehouses','orders'));
@@ -60,35 +60,35 @@ class HomeController extends Controller
             $item = \request('item');
             if ($category == 'farm'){
                 $data = Farm::join('crops','crops.id','=','farms.crop_id')
-                            ->where('crops.name', 'LIKE', '%'.$item.'%')->get();
+                            ->where('crops.name', 'LIKE', '%'.$item.'%')->where('visible',1)->get();
                 $results[]["farm"] = $data;
             }elseif ($category == 'warehouse'){
                 $data = Warehouse::whereHas('crops', function ($query){
                     $query->where('name','LIKE','%'.\request('item').'%');
-                })->get();
+                })->where('visible',1)->get();
                 $results[]["warehouse"] = $data;
             }elseif ($category == 'product'){
-                $data = Product::where('materials','LIKE','%'.\request('item').'%')->get();
+                $data = Product::where('materials','LIKE','%'.\request('item').'%')->where('visible',1)->get();
                 $results[]["product"] = $data;
             }
             return view('user.order.search',compact('results'));
         }else{
-            $farms = Farm::all();
-            $warehouses = Warehouse::all();
-            $products = Product::all();
+            $farms = Farm::where('visible',1)->get();
+            $products = Product::where('visible',1)->get();
+            $warehouses = Warehouse::where('visible',1)->get();
             return view('user.order.order-list',compact('farms','warehouses','products'));
         }
     }
 
     public function orderListDetail($id,$type){
         if ($type == 'farm'){
-            $farm = Farm::where('id',$id)->first();
+            $farm = Farm::where('id',$id)->where('visible',1)->first();
             return view('user.order.order-detail-farm',compact('farm'));
         }elseif ($type == 'warehouse'){
-            $warehouse = Warehouse::where('id',$id)->first();
+            $warehouse = Warehouse::where('id',$id)->where('visible',1)->first();
             return view('user.order.order-detail-warehouse',compact('warehouse'));
         }elseif ($type == 'product'){
-            $product = Product::where('id',$id)->first();
+            $product = Product::where('id',$id)->where('visible',1)->first();
             return view('user.order.order-detail-product',compact('product'));
         }
     }
