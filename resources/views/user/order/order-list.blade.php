@@ -43,7 +43,7 @@
                                 </h6>
                                 <p class="card-text">Crop Type: {{ $farm->crop->name }}</p>
                                 <p class="card-text">Farm Size: {{ $farm->size }}</p>
-                                <p class="card-text">Price: GHS{{ $farm->price }} per unit</p>
+                                <p class="card-text">Price: {{$farm->currency}}{{ $farm->price }} per {{$farm->quantity}}</p>
                                 <a href="{{ route('user.view.orderList.detail',['id'=>$farm->id,'type'=>'farm']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
                                 <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($farm->updated_at)->diffForHumans()}}</small></p>
                             </div>
@@ -64,9 +64,9 @@
                                         Agrosourcing Support
                                     @endif
                                 </h6>
-                                <p class="card-text">{{ $warehouse->region->name }} Region</p>
+                                <p class="card-text">{{ $warehouse->region->name }}</p>
                                 <p class="card-text">Crop Type(s): {{$warehouse->crops[0]->name}} </p>
-                                <p class="card-text">Price: GHS{{ $warehouse->price }} per unit </p>
+                                <p class="card-text">Price: {{$warehouse->currency}}{{ $warehouse->price }} per {{$warehouse->quantity}} </p>
                                 <a href="{{ route('user.view.orderList.detail',['id'=>$warehouse->id,'type'=>'warehouse']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
                                 <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($warehouse->updated_at)->diffForHumans()}}</small></p>
                             </div>
@@ -81,9 +81,9 @@
                                     <h5 class="card-title"><i class="fa fa-dot-circle text-info"></i> Processing Company</h5>
                                     <h6 class="card-text">{{$product->name}}</h6>
                                     <p class="card-text">Company: {{ $product->business }}</p>
-                                    <p class="card-text">{{ $product->region->name }} Region</p>
+                                    <p class="card-text">{{ $product->region->name }}</p>
                                     <p class="card-text">Material(s): {{$product->materials}} </p>
-                                    <p class="card-text">Price: GHS{{ $product->price }} per unit </p>
+                                    <p class="card-text">Price: {{$product->currency}}{{ $product->price }} per {{$product->quantity}} </p>
                                     <a href="{{ route('user.view.orderList.detail',['id'=>$product->id,'type'=>'product']) }}" class="btn btn-circle btn-primary"><i class="fa fa-cart-plus"></i></a>
                                     <p class="card-text"><small class="text-muted">Last updated {{\Carbon\Carbon::parse($product->updated_at)->diffForHumans()}}</small></p>
                                 </div>

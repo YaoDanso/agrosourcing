@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = ['name','description','price','materials',
-        'business','region_id','longitude','latitude','wastes','user_id','image'];
+        'business','region_id','longitude','latitude','wastes','user_id','image','quantity','currency'];
 
     public function user(){
         return $this->belongsTo(User::class);

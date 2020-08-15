@@ -63,6 +63,8 @@ class FarmController extends Controller
          $farm->price = $request->price;
          $farm->user_id = auth()->user()->id;
          $farm->region_id = $request->region;
+         $farm->currency = $request->currency;
+         $farm->quantity = $request->quantity;
 
          if ($request->has('organic')){
              $farm->organic = 1;

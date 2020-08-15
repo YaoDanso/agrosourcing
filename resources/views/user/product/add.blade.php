@@ -18,15 +18,11 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Description of Product</label>
-                            <textarea class="form-control" name="description" required rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Price Per Quantity</label>
-                            <input type="number" class="form-control" name="price" required>
+                            <textarea class="form-control" name="description" required rows="4"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="name">Raw materials used (Separate with comma if you have more than one)</label>
-                            <textarea class="form-control" name="materials" required rows="3"></textarea>
+                            <textarea class="form-control" name="materials" required rows="5"></textarea>
                         </div>
                     </div>
                     <div class="col-6">
@@ -64,6 +60,29 @@
                             <label for="name">Choose a picture for Product</label>
                             <input type="file" class="form-control" name="image" required>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="">Currency*</label>
+                        <select name="currency"  class="form-control" required>
+                            <option value="GHS">GHS</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Price*</label>
+                            <input type="number" class="form-control" name="price" value="{{ old('price') }}" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Quantity*</label>
+                        <select name="quantity"  class="form-control">
+                            <option value="Ton">Ton</option>
+                            <option value="Kilogram">Kilogram</option>
+                            <option value="Cubic feet">Cubic feet</option>
+                            <option value="Cubic Meters">Cubic Meters</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group mt-4">

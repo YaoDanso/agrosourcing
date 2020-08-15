@@ -105,7 +105,8 @@ class HomeController extends Controller
                 'attributes' => array(
                     'crop' => $farm->crop->name,
                     'image' => $farm->image,
-                    'type' => 'farm'
+                    'type' => 'farm',
+                    'currency' => $farm->currency
                 )
             ));
             return response(array(
@@ -123,7 +124,8 @@ class HomeController extends Controller
                 'attributes' => array(
                     'crop' => $warehouse->crops[0]->name,
                     'image' => $warehouse->image,
-                    'type' => 'warehouse'
+                    'type' => 'warehouse',
+                    'currency' => $warehouse->currency
                 )
             ));
             return response(array(
@@ -141,7 +143,8 @@ class HomeController extends Controller
                 'attributes' => array(
                     'crop' => $product->materials,
                     'image' => $product->image,
-                    'type' => 'processing company'
+                    'type' => 'processing company',
+                    'currency' => $product->currency
                 )
             ));
             return response(array(

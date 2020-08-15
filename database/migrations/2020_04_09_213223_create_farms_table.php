@@ -25,6 +25,8 @@ class CreateFarmsTable extends Migration
             $table->integer('region_id')->unsigned();
             $table->integer('organic')->default(0);
             $table->integer('visible')->default(0);
+            $table->string('currency');
+            $table->string('quantity');
             $table->timestamps();
 
             $table->foreign('crop_id')

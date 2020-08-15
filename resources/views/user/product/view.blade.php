@@ -36,7 +36,7 @@
                                     <td>{{ $product->longitude }}</td>
                                     <td>{{ $product->latitude }}</td>
                                     <td>{{ $product->region->name }}</td>
-                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->currency }}{{ $product->price }}</td>
                                     <td>{{ $product->materials }}</td>
                                     <td>{{ $product->business }}</td>
                                     <td>{{ $product->wastes }}</td>

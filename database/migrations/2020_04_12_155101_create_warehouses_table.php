@@ -22,6 +22,8 @@ class CreateWarehousesTable extends Migration
             $table->string('image');
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('visible')->default(0);
+            $table->string('currency');
+            $table->string('quantity');
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('region_id')->references('id')->on('regions');

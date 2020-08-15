@@ -27,7 +27,7 @@
                     @endif
                 @endif
                 <h4 class="font-weight-light mb-3">Crop Type: {{ $farm->crop->name }}</h4>
-                <h4 class="font-weight-light mb-3">Price: GHS{{ $farm->price }} per unit</h4>
+                <h4 class="font-weight-light mb-3">Price: {{ $farm->currency }}{{ $farm->price }} per {{ $farm->quantity }}</h4>
                 <h4 class="font-weight-light mb-3">Land Size: {{ $farm->size }} Acres</h4>
                 <h4 class="font-weight-light mb-3">Location: {{ $farm->region->name }}</h4>
                 <div class="col-4 mt-4">

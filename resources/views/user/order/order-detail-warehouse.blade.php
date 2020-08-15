@@ -30,7 +30,7 @@
                         {{ $crop->name }},
                     @endforeach
                 </h4>
-                <h4 class="font-weight-light mb-3">Price: GHS{{ $warehouse->price }} per unit</h4>
+                <h4 class="font-weight-light mb-3">Price: {{$warehouse->currency}}{{ $warehouse->price }} per {{$warehouse->quantity}}</h4>
                 <h4 class="font-weight-light mb-3">Location: {{ $warehouse->region->name }}</h4>
                 <div class="col-4 mt-4">
                     <div class="form-group">

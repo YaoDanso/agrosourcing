@@ -43,8 +43,8 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="price">Price*</label>
-                            <input type="number" name="price" class="form-control" required value="{{ old('price') }}">
+                            <label for="image">Warehouse Image*</label>
+                            <input type="file" name="image" class="form-control" value="{{ old('image') }}">
                         </div>
                     </div>
                 </div>
@@ -63,18 +63,38 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="image">Warehouse Image*</label>
-                            <input type="file" name="image" class="form-control" value="{{ old('image') }}">
+                            <label for="">Select User*</label>
+                            <select name="user_id" class="form-control">
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Select User*</label>
-                    <select name="user_id" class="form-control">
-                        @foreach($users as $user)
-                            <option value="{{ $user->id }}">{{ $user->name }}</option>
-                        @endforeach
-                    </select>
+
+                <div class="row">
+                    <div class="col-4">
+                        <label for="">Currency*</label>
+                        <select name="currency"  class="form-control">
+                            <option value="GHS">GHS</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Price*</label>
+                            <input type="number" class="form-control" name="price" value="{{ old('price') }}" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Quantity*</label>
+                        <select name="quantity"  class="form-control">
+                            <option value="Ton">Ton</option>
+                            <option value="Kilogram">Kilogram</option>
+                            <option value="Cubic feet">Cubic feet</option>
+                            <option value="Cubic Meters">Cubic Meters</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">

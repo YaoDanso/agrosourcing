@@ -101,6 +101,12 @@ class AdminController extends Controller
         $farm->price = $request->price;
         $farm->region_id = $request->region;
         $farm->user_id = $request->user_id;
+        $farm->currency = $request->currency;
+        $farm->quantity = $request->quantity;
+
+        if ($request->has('organic')){
+            $farm->organic = 1;
+        }
 
         if ($request->hasFile('image')){
             $image = $request->file('image');
@@ -149,6 +155,8 @@ class AdminController extends Controller
         $warehouse->latitude = $request->latitude;
         $warehouse->price = $request->price;
         $warehouse->user_id = $request->user_id;
+        $warehouse->currency = $request->currency;
+        $warehouse->quantity = $request->quantity;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');
@@ -192,7 +200,9 @@ class AdminController extends Controller
                 'latitude' => $request->latitude,
                 'wastes' => $request->wastes,
                 'image' => $new_name,
-                'user_id' => $request->user_id
+                'user_id' => $request->user_id,
+                'currency' => $request->currency,
+                'quantity' => $request->quantity
             ]);
             //sending notification
             $message = "You added a new product!";

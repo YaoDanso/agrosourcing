@@ -30,7 +30,7 @@
                                     <td>{{ $warehouse->region->name }}</td>
                                     <td>{{ $warehouse->longitude }}</td>
                                     <td>{{ $warehouse->latitude }}</td>
-                                    <td>{{ $warehouse->price }}</td>
+                                    <td>{{ $warehouse->currency }}{{ $warehouse->price }}</td>
                                     <td>
                                         @foreach($warehouse->crops as $crop)
                                             {{ $crop->name }}

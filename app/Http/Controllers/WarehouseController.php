@@ -60,6 +60,8 @@ class WarehouseController extends Controller
         $warehouse->latitude = $request->latitude;
         $warehouse->price = $request->price;
         $warehouse->user_id = auth()->user()->id;
+        $warehouse->currency = $request->currency;
+        $warehouse->quantity = $request->quantity;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');

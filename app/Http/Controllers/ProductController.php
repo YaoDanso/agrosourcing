@@ -61,6 +61,8 @@ class ProductController extends Controller
         $product->latitude = $request->latitude;
         $product->wastes = $request->wastes;
         $product->user_id = auth()->user()->id;
+        $product->currency = $request->currency;
+        $product->quantity = $request->quantity;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');

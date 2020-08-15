@@ -41,8 +41,12 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label>Price per Quantity*</label>
-                            <input type="text" class="form-control" name="price" value="{{ old('price') }}">
+                            <label for="">Select Region*</label>
+                            <select name="region" class="form-control">
+                                @foreach($regions as $region)
+                                    <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -64,13 +68,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Select Region*</label>
-                    <select name="region" class="form-control">
-                        @foreach($regions as $region)
-                            <option value="{{ $region->id }}">{{ $region->name }}</option>
-                        @endforeach
-                    </select>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="">Currency*</label>
+                        <select name="currency"  class="form-control">
+                            <option value="GHS">GHS</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Price*</label>
+                            <input type="number" class="form-control" name="price" value="{{ old('price') }}" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Quantity*</label>
+                        <select name="quantity"  class="form-control">
+                            <option value="Ton">Ton</option>
+                            <option value="Kilogram">Kilogram</option>
+                            <option value="Cubic feet">Cubic feet</option>
+                            <option value="Cubic Meters">Cubic Meters</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group mt-4 mb-4">

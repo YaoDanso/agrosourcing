@@ -23,6 +23,7 @@
                                 <th>Crop</th>
                                 <th>Wastes</th>
                                 <th>Organic</th>
+                                <th>Price</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,6 +47,7 @@
                                             <p class="text-danger">No</p>
                                         @endif
                                     </td>
+                                    <td>{{ $farm->currency }}{{ $farm->price }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
