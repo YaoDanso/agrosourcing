@@ -46,10 +46,13 @@
                                     </div>
                                     <div class="col-4 col-sm-4 col-md-4">
                                         <div class="quantity">
-                                            <input type="button" value="+" class="plus">
-                                            <input type="number" step="1" max="99" min="1" value="{{$item->quantity}}" title="Qty" class="qty"
-                                                   size="4">
-                                            <input type="button" value="-" class="minus">
+                                            <form action="{{ route('user.update.cart') }}" method="POST">
+                                                @csrf
+                                                <input type="number" max="99" min="1" value="{{$item->quantity}}" title="Qty" class="qty"
+                                                       size="4" name="qty">
+                                                <input type="hidden" name="rowId" value="{{ $item->id }}">
+                                                <button class="btn" type="submit">update</button>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="col-2 col-sm-2 col-md-2 text-right">

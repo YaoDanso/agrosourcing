@@ -159,6 +159,16 @@ class HomeController extends Controller
         return redirect()->back()->with('success','Item is removed successfully');
     }
 
+    public function updateCart(Request $request){
+        \Cart::update($request->rowId,array(
+            'quantity' => array(
+                'relative' => false,
+                'value' => $request->qty
+            ),
+        ));
+        return redirect()->back()->with('success','Item is updated successfully');
+    }
+
     public function billing(){
         return view('user.order.billing');
     }
