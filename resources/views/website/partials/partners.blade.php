@@ -12,6 +12,9 @@
             <div class="slide">
                 <img src="{{ asset('web/img/partner3.jpg') }}">
             </div>
+            <div class="slide">
+                <img src="{{ asset('web/img/partner4.png') }}">
+            </div>
         </section>
     </div>
 </section>
