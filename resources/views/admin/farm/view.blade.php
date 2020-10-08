@@ -49,9 +49,9 @@
                                     </td>
                                     <td>
                                         @if($farm->visible == 1)
-                                            <a class="btn btn-danger" href="{{ route('admin.hide.farm',$farm->id) }}"><i class="fa fa-thumbs-down"></i> Hide Project</a>
+                                            <a class="btn btn-danger" href="{{ route('admin.hide.farm',$farm->id) }}"><i class="fa fa-thumbs-down"></i> Hide Farm</a>
                                         @elseif($farm->visible == 0)
-                                            <a class="btn btn-success" href="{{ route('admin.show.farm',$farm->id) }}"><i class="fa fa-thumbs-up"></i> Show Project</a>
+                                            <a class="btn btn-success" href="{{ route('admin.show.farm',$farm->id) }}"><i class="fa fa-thumbs-up"></i> Show Farm</a>
                                         @endif
                                     </td>
                                 </tr>

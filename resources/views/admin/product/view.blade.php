@@ -43,9 +43,9 @@
                                     <td>{{ $product->wastes }}</td>
                                     <td>
                                         @if($product->visible == 1)
-                                            <a class="btn btn-danger" href="{{ route('admin.hide.product',$product->id) }}"><i class="fa fa-thumbs-down"></i> Hide Project</a>
+                                            <a class="btn btn-danger" href="{{ route('admin.hide.product',$product->id) }}"><i class="fa fa-thumbs-down"></i> Hide Product</a>
                                         @elseif($product->visible == 0)
-                                            <a class="btn btn-success" href="{{ route('admin.show.product',$product->id) }}"><i class="fa fa-thumbs-up"></i> Show Project</a>
+                                            <a class="btn btn-success" href="{{ route('admin.show.product',$product->id) }}"><i class="fa fa-thumbs-up"></i> Show Product</a>
                                         @endif
                                     </td>
                                 </tr>
