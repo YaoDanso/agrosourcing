@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Admin;
 use App\Crop;
+use App\District;
 use App\Farm;
 use App\Notifications\AdminNotification;
 use App\Notifications\UserNotification;
@@ -37,7 +38,8 @@ class FarmController extends Controller
     {
         $crops = Crop::all();
         $regions = Region::all();
-        return view('user.farmer.create',compact('crops','regions'));
+        $districts = District::all();
+        return view('user.farmer.create',compact('crops','regions','districts'));
     }
 
     /**
@@ -65,6 +67,7 @@ class FarmController extends Controller
          $farm->region_id = $request->region;
          $farm->currency = $request->currency;
          $farm->quantity = $request->quantity;
+         $farm->district_id = $request->district;
 
          if ($request->has('organic')){
              $farm->organic = 1;

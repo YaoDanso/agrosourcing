@@ -41,8 +41,8 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="">Select Region*</label>
-                            <select name="region" class="form-control">
+                            <label for="region">Select Region*</label>
+                            <select name="region" class="form-control" id="region">
                                 @foreach($regions as $region)
                                     <option value="{{ $region->id }}">{{ $region->name }}</option>
                                 @endforeach
@@ -50,6 +50,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="district">Select District</label>
+                    <select name="district" id="district" class="form-control">
+                        @foreach($districts as $district)
+                            <option value="{{ $district->id }}" id="{{ $district->region_id }}">{{ $district->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <input type="hidden" name="district_id" id="district_id">
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
@@ -106,4 +115,18 @@
             </form>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            var $select1 = $( '#region' ),
+                $select2 = $( '#district' ),
+                $options = $select2.find( 'option' );
+
+            $select1.on( 'change', function() {
+                $select2.html( $options.filter( '[id="' + this.value + '"]' ) );
+            } ).trigger( 'change' );
+        })
+    </script>
 @endsection

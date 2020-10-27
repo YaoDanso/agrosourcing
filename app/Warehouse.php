@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Warehouse extends Model
 {
-    protected $fillable = ['region_id','latitude','longitude','price','user_id','image','quantity','currency'];
+    protected $fillable = ['region_id','latitude','longitude','price','user_id','image','quantity','currency','district_id'];
 
     public function crops(){
         return $this->belongsToMany(Crop::class);

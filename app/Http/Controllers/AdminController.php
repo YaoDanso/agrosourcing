@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Crop;
+use App\District;
 use App\Farm;
 use App\Notifications\AdminNotification;
 use App\Notifications\UserNotification;
@@ -52,7 +53,8 @@ class AdminController extends Controller
         $crops = Crop::all();
         $regions = Region::all();
         $users = User::all();
-        return view('admin.product.create',compact('crops','regions','users'));
+        $districts = District::all();
+        return view('admin.product.create',compact('crops','regions','users','districts'));
     }
     public function viewProduct(){
         $products = Product::all();
@@ -63,7 +65,8 @@ class AdminController extends Controller
         $crops = Crop::all();
         $regions = Region::all();
         $users = User::all();
-        return view('admin.warehouse.create',compact('crops','regions','users'));
+        $districts = District::all();
+        return view('admin.warehouse.create',compact('crops','regions','users','districts'));
     }
 
     public function viewWarehouse(){
@@ -75,7 +78,8 @@ class AdminController extends Controller
         $crops = Crop::all();
         $regions = Region::all();
         $users = User::all();
-        return view('admin.farm.create',compact('crops','regions','users'));
+        $districts = District::all();
+        return view('admin.farm.create',compact('crops','regions','users','districts'));
     }
 
     public function viewFarm(){
@@ -103,6 +107,7 @@ class AdminController extends Controller
         $farm->user_id = $request->user_id;
         $farm->currency = $request->currency;
         $farm->quantity = $request->quantity;
+        $farm->district_id = $request->district;
 
         if ($request->has('organic')){
             $farm->organic = 1;
@@ -157,6 +162,7 @@ class AdminController extends Controller
         $warehouse->user_id = $request->user_id;
         $warehouse->currency = $request->currency;
         $warehouse->quantity = $request->quantity;
+        $warehouse->district_id = $request->district;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');
@@ -202,7 +208,8 @@ class AdminController extends Controller
                 'image' => $new_name,
                 'user_id' => $request->user_id,
                 'currency' => $request->currency,
-                'quantity' => $request->quantity
+                'quantity' => $request->quantity,
+                'district_id' => $request->district
             ]);
             //sending notification
             $message = "You added a new product!";

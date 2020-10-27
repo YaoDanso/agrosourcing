@@ -16,6 +16,7 @@ class RegionSeeder extends Seeder
         DB::table('regions')->insert([
             'name' => "Oti Region"
         ]);
+
         DB::table('regions')->insert([
             'name' => "Bono East Region"
         ]);

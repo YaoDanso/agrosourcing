@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\District;
 use App\Notifications\AdminNotification;
 use App\Notifications\UserNotification;
 use App\Product;
@@ -36,7 +37,8 @@ class ProductController extends Controller
     {
         $wastes = Waste::all();
         $regions = Region::all();
-        return view('user.product.add',compact('wastes','regions'));
+        $districts = District::all();
+        return view('user.product.add',compact('wastes','regions','districts'));
     }
 
     /**
@@ -63,6 +65,7 @@ class ProductController extends Controller
         $product->user_id = auth()->user()->id;
         $product->currency = $request->currency;
         $product->quantity = $request->quantity;
+        $product->district_id = $request->district;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');

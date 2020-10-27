@@ -69,6 +69,11 @@
             <span>Roles</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.districts') }}">
+            <i class="fas fa-fw fa-landmark"></i>
+            <span>Districts</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.add.crop') }}">
             <i class="fas fa-fw fa-folder"></i>
             <span>Crop</span></a>

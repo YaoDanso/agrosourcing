@@ -127,6 +127,11 @@ Route::prefix('admin')->group(function (){
     Route::post('role','AdminController@role')->name('admin.roles.submit');
     Route::get('role/{role}','AdminController@roleDelete')->name('admin.roles.delete');
 
+    //====== District ====
+    Route::get('districts','DistrictController@getDistricts')->name('admin.districts');
+    Route::post('districts/add','DistrictController@addDistricts')->name('admin.districts.submit');
+    Route::get('district/{district}','DistrictController@deleteDistrict')->name('admin.districts.delete');
+
 
     //============== Waste ============
     Route::get('waste-management','AdminController@addWaste')->name('admin.add.waste');

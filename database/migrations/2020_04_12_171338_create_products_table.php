@@ -29,9 +29,11 @@ class CreateProductsTable extends Migration
             $table->integer('visible')->default(0);
             $table->string('currency');
             $table->string('quantity');
+            $table->integer('district_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('region_id')->references('id')->on('regions');
+            $table->foreign('district_id')->references('id')->on('districts');
             $table->timestamps();
         });
     }

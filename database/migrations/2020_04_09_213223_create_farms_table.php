@@ -27,6 +27,7 @@ class CreateFarmsTable extends Migration
             $table->integer('visible')->default(0);
             $table->string('currency');
             $table->string('quantity');
+            $table->integer('district_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('crop_id')
@@ -40,6 +41,10 @@ class CreateFarmsTable extends Migration
             $table->foreign('region_id')
                 ->references('id')
                 ->on('regions');
+
+            $table->foreign('district_id')
+                ->references('id')
+                ->on('districts');
         });
     }
 

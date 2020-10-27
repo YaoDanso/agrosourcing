@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Admin;
 use App\Crop;
+use App\District;
 use App\Notifications\AdminNotification;
 use App\Notifications\UserNotification;
 use App\Region;
@@ -36,7 +37,8 @@ class WarehouseController extends Controller
     {
         $crops = Crop::all();
         $regions = Region::all();
-        return view('user.aggregator.add_warehouse',compact('crops','regions'));
+        $districts = District::all();
+        return view('user.aggregator.add_warehouse',compact('crops','regions', 'districts'));
     }
 
     /**
@@ -62,6 +64,7 @@ class WarehouseController extends Controller
         $warehouse->user_id = auth()->user()->id;
         $warehouse->currency = $request->currency;
         $warehouse->quantity = $request->quantity;
+        $warehouse->district_id = $request->district;
 
         if ($request->hasFile('image')){
             $image = $request->file('image');

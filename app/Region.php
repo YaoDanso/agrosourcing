@@ -21,4 +21,8 @@ class Region extends Model
     public function warehouse(){
         return $this->belongsTo(Warehouse::class);
     }
+
+    public function districts(){
+        return $this->hasMany(District::class);
+    }
 }
