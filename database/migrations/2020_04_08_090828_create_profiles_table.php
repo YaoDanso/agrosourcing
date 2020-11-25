@@ -18,6 +18,9 @@ class CreateProfilesTable extends Migration
             $table->string('pic')->nullable();
             $table->text('bio')->nullable();
             $table->string('company')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('card_no')->nullable();
             $table->integer('user_id')->unique()->unsigned();
             $table->timestamps();
         });

@@ -94,7 +94,7 @@ class RegisterController extends Controller
         foreach ($admins as $admin){
             $admin->notify(new NewUserAdmin());
         }
-        //Mail::to($user->email)->send(new RegisterMail($token,$user->name));
+        Mail::to($user->email)->send(new RegisterMail($token,$user->name));
 
         return redirect()->intended(route('user.login'))
             ->with('success','Your account was created, visit your email to verify your account.');

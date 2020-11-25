@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Crop;
 use App\District;
 use App\Farm;
+use App\Mail\DataEntryRegister;
 use App\Notifications\AdminNotification;
 use App\Notifications\UserNotification;
 use App\Order;
 use App\OrderDetail;
 use App\Product;
+use App\Profile;
 use App\Region;
 use App\Role;
 use App\Trucker;
@@ -20,7 +23,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
@@ -405,7 +410,35 @@ class AdminController extends Controller
 
     public function informationSystem(){
         $data = User::all();
-        return view('admin.user.information',compact('data'));
+        $roles = Role::all();
+        return view('admin.user.information',compact('data','roles'));
+    }
+
+    public function storeUsers(Request $request){
+        $user = new User();
+        $user->name =  $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->status = 1;
+        $user->email_verified = 1;
+        $user->uuid = Str::uuid();
+        $user->save();
+
+        $user->roles()->sync($request->roles,false);
+
+        Profile::create([
+            'pic' => 'avatar.png',
+            'bio' => null,
+            'company' => null,
+            'user_id' => $user->id,
+            'dob' => $request->dob,
+            'gender' => $request->gender,
+            'card_no' => $request->card_no
+        ]);
+
+        return redirect()->route('admin.view.information')
+            ->with('success','New user account created successfully!');
     }
 
     public function profile(){
@@ -436,4 +469,51 @@ class AdminController extends Controller
             return redirect(route('admin.profile'));
         }
     }
+
+    //============ Data Entry Account ==========
+    public function dataEntry(){
+        $users = Admin::all();
+        $districts = District::all();
+        return view('admin.user.data-entry',compact('users','districts'));
+    }
+
+    public function storeEntryUsers(Request $request){
+        $admin = new Admin();
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->password = Hash::make($request->password);
+        $admin->district = $request->district;
+        $admin->uuid = Str::uuid();
+        $admin->level = 2;
+        $admin->status = 1;
+        $admin->save();
+
+        Mail::to($admin->email)->send(new DataEntryRegister($admin->name, $request->password));
+
+        return redirect()->route('admin.view.data-users')
+            ->with('success','New entry user created successfully with password sent to email!');
+    }
+
+    public function suspendAdmin($id){
+        Admin::where('id',$id)
+            ->update(['status' => 0]);
+        //sending notification
+        $message = "You suspended a data entry user";
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
+        return redirect()->route('admin.view.data-users')
+            ->with('success','Admin Suspended successfully!');
+    }
+    public function unsuspendAdmin($id){
+        Admin::where('id',$id)
+            ->update(['status' => 1]);
+        //sending notification
+        $message = "You unsuspended a data entry user";
+
+        //database Notification
+        Notification::send(auth()->user(),new AdminNotification($message));
+        return redirect()->route('admin.view.data-users')
+            ->with('success','Admin Unsuspended successfully!');
+    }
+
 }

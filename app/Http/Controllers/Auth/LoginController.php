@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -49,10 +50,16 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'email'  => 'required|email',
+            'email'  => 'required',
             'password' => 'required|min:6'
         ]);
-        $user = User::where('email',$request->email)->first();
+
+        if($this->checkIsPhone($request->email)){
+            $user = User::where('phone',$request->email)->first();
+        }else{
+            $user = User::where('email',$request->email)->first();
+        }
+
         if ($user){
             if ($user->status == 0){
                 return redirect()->back()
@@ -75,7 +82,8 @@ class LoginController extends Controller
                 ->with('error','Sorry, you do not have an account with us.');
         }
 
-        if($this->attemptLogin($request)){
+        if (Hash::check($request->password,$user->password)){
+            Auth::login($user,$request->remember);
             if ($request->redirect_url){
                 return redirect()->to(urldecode($request->redirect_url));
             }else{
@@ -95,5 +103,9 @@ class LoginController extends Controller
 
         Auth::guard('web')->logout();
         return redirect()->route('user.login');
+    }
+
+    public function checkIsPhone($phone){
+        return is_numeric($phone);
     }
 }

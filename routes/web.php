@@ -114,10 +114,18 @@ Route::prefix('admin')->group(function (){
 
     //========== Users============
     Route::get('/users', 'AdminController@viewUsers')->name('admin.view.users');
+    Route::get('/data-entry-users', 'AdminController@dataEntry')->name('admin.view.data-users');
+    Route::post('/data-entry-users', 'AdminController@storeEntryUsers')->name('admin.store.data-users');
+
     Route::get('/information-system', 'AdminController@informationSystem')->name('admin.view.information');
+    Route::post('/information-system', 'AdminController@storeUsers')->name('admin.store-users');
+
     Route::get('/suspend-user/{id}', 'AdminController@suspendUser')->name('admin.suspend.user');
     Route::get('/unsuspend-user/{id}', 'AdminController@unsuspendUser')->name('admin.unsuspend.user');
     Route::get('/approve-user/{id}', 'AdminController@approveUser')->name('admin.approve.user');
+    //======= Suspend Data Entry User ======
+    Route::get('/suspend-admin/{id}', 'AdminController@suspendAdmin')->name('admin.suspend.admin');
+    Route::get('/unsuspend-admin/{id}', 'AdminController@unsuspendAdmin')->name('admin.unsuspend.admin');
 
     //=========== Admin Notification
     Route::get('mark-as-read','AdminController@markAsRead')->name('admin.notification.read');

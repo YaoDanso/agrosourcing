@@ -14,8 +14,8 @@
                                 <form method="post" action="{{ route('user.login.submit') }}">
                                     @csrf
                                     <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control"
-                                               placeholder="Email address" required autofocus name="email" value="{{ old('email') }}">
+                                        <input type="text" id="inputEmail" class="form-control"
+                                               placeholder="Email address / Phone" required autofocus name="email" value="{{ old('email') }}">
                                         <label for="inputEmail">Email address</label>
                                     </div>
 

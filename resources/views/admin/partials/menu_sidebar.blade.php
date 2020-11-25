@@ -60,48 +60,51 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.view.users') }}">View Users</a>
                 <a class="collapse-item" href="{{ route('admin.view.information') }}">Information System</a>
+                <a class="collapse-item" href="{{ route('admin.view.data-users') }}">Data Entry Accounts</a>
             </div>
         </div>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.roles') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Roles</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.districts') }}">
-            <i class="fas fa-fw fa-landmark"></i>
-            <span>Districts</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.add.crop') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Crop</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.add.waste') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Waste</span></a>
-    </li>
+    @if(auth()->user()->level == 1)
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.roles') }}">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Roles</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.districts') }}">
+                <i class="fas fa-fw fa-landmark"></i>
+                <span>Districts</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.add.crop') }}">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Crop</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.add.waste') }}">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Waste</span></a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTruck" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Trucks</span>
-        </a>
-        <div id="collapseTruck" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('trucks.index') }}">Add Truck</a>
-                <a class="collapse-item" href="{{ route('admin.trucker.view') }}">Manage Truckers</a>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTruck" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Trucks</span>
+            </a>
+            <div id="collapseTruck" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{ route('trucks.index') }}">Add Truck</a>
+                    <a class="collapse-item" href="{{ route('admin.trucker.view') }}">Manage Truckers</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.orders.view') }}">
-            <i class="fas fa-fw fa-boxes"></i>
-            <span>Orders</span></a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.orders.view') }}">
+                <i class="fas fa-fw fa-boxes"></i>
+                <span>Orders</span></a>
+        </li>
+    @endif
 
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Tables -->
