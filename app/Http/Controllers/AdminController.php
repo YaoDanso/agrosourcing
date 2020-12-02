@@ -47,11 +47,19 @@ class AdminController extends Controller
         ];
         $chart = new LaravelChart($chart_options);
 
-        $farms = Farm::all();
-        $products = Product::all();
-        $warehouses = Warehouse::all();
-        $orders = Order::all();
-        return view('admin.dashboard',compact('chart','farms','products','warehouses','orders'));
+        if (\auth()->user()->level == 2){
+            $farms = Farm::where('district_id',\auth()->user()->district)->get();
+            $products = Product::where('district_id',\auth()->user()->district)->get();
+            $warehouses = Warehouse::where('district_id',\auth()->user()->district)->get();
+            $orders = Order::all();
+            return view('admin.dashboard',compact('chart','farms','products','warehouses','orders'));
+        }else{
+            $farms = Farm::all();
+            $products = Product::all();
+            $warehouses = Warehouse::all();
+            $orders = Order::all();
+            return view('admin.dashboard',compact('chart','farms','products','warehouses','orders'));
+        }
     }
 
     public function addProduct(){
@@ -61,9 +69,16 @@ class AdminController extends Controller
         $districts = District::all();
         return view('admin.product.create',compact('crops','regions','users','districts'));
     }
+
     public function viewProduct(){
-        $products = Product::all();
-        return view('admin.product.view',compact('products'));
+        if (\auth()->user()->level == 1){
+            $products = Product::all();
+            return view('admin.product.view',compact('products'));
+        }else{
+            $products = Product::where('district_id',\auth()->user()->district)->get();
+            return view('admin.product.view',compact('products'));
+        }
+
     }
 
     public function addWarehouse(){
@@ -75,8 +90,13 @@ class AdminController extends Controller
     }
 
     public function viewWarehouse(){
-        $warehouses = Warehouse::all();
-        return view('admin.warehouse.view',compact('warehouses'));
+        if (\auth()->user()->level == 1){
+            $warehouses = Warehouse::all();
+            return view('admin.warehouse.view',compact('warehouses'));
+        }else{
+            $warehouses = Warehouse::where('district_id',\auth()->user()->district)->get();
+            return view('admin.warehouse.view',compact('warehouses'));
+        }
     }
 
     public function addFarm(){
@@ -88,8 +108,13 @@ class AdminController extends Controller
     }
 
     public function viewFarm(){
-        $farms = Farm::all();
-        return view('admin.farm.view',compact('farms'));
+        if (\auth()->user()->level == 1){
+            $farms = Farm::all();
+            return view('admin.farm.view',compact('farms'));
+        }else{
+            $farms = Farm::where('district_id',\auth()->user()->district)->get();
+            return view('admin.farm.view',compact('farms'));
+        }
     }
 
     public function storeFarm(Request $request)

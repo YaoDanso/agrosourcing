@@ -58,9 +58,11 @@
         </a>
         <div id="collapseUsers" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.view.users') }}">View Users</a>
                 <a class="collapse-item" href="{{ route('admin.view.information') }}">Information System</a>
-                <a class="collapse-item" href="{{ route('admin.view.data-users') }}">Data Entry Accounts</a>
+                @if(auth()->user()->level == 1)
+                    <a class="collapse-item" href="{{ route('admin.view.data-users') }}">Data Entry Accounts</a>
+                    <a class="collapse-item" href="{{ route('admin.view.users') }}">View Users</a>
+                @endif
             </div>
         </div>
     </li>
